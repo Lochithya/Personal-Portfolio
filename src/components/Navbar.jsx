@@ -10,17 +10,22 @@ const Navbar = () => {
   const [isDark, setIsDark] = useState(true);
   const [activeSection, setActiveSection] = useState('about');
 
-  // Initialize theme
+  // Initialize theme - default to dark mode
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
-    if (savedTheme === 'light' || (!savedTheme && !prefersDark)) {
+    // Only switch to light mode if explicitly saved in localStorage
+    if (savedTheme === 'light') {
       setIsDark(false);
       document.documentElement.classList.remove('dark');
     } else {
+      // Default to dark mode
       setIsDark(true);
       document.documentElement.classList.add('dark');
+      // Set dark as default in localStorage if not already set
+      if (!savedTheme) {
+        localStorage.setItem('theme', 'dark');
+      }
     }
   }, []);
 
