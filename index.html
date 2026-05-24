@@ -10,14 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Prevent Theme Flicker -->
+    <!-- Force Dark Mode as Default -->
     <script>
       try {
-        if (localStorage.getItem('theme') === 'light' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
-          document.documentElement.classList.remove('dark')
-        } else {
-          document.documentElement.classList.add('dark')
-        }
+        // Always force dark mode regardless of browser preference or localStorage
+        document.documentElement.classList.add('dark')
       } catch (_) {}
     </script>
   </head>
