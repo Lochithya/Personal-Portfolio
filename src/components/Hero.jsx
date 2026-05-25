@@ -156,7 +156,7 @@ const Hero = () => {
               <div className="relative z-10 overflow-hidden rounded-[1.35rem] bg-[#030303]">
                 <div className="relative aspect-[4/5] w-full max-h-[calc(100%-20px)]">
                   <img
-                    src="/images/hero/profile.png"
+                    src="/images/hero/profile.jpeg"
                     alt="Profile"
                     className="w-full h-full object-cover object-center"
                     onError={(e) => { e.target.style.display = 'none'; }}
