@@ -8,9 +8,11 @@ A modern, responsive personal portfolio website built with React.js, featuring s
 [![Vite](https://img.shields.io/badge/Vite-5.3.1-646CFF.svg)](https://vitejs.dev/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
+
 ## 📸 Preview
 
 ![Portfolio Preview](./public/images/projects/portfolio.png)
+
 
 ## ✨ Features
 
@@ -24,6 +26,7 @@ A modern, responsive personal portfolio website built with React.js, featuring s
 - 🎭 **Interactive Components** - Engaging UI elements and hover effects
 - 📝 **Blog Integration** - Showcase technical articles and writings
 - 🎨 **Custom Animations** - Animated stars and gradient effects
+
 
 ## 🛠️ Tech Stack
 
@@ -39,6 +42,7 @@ A modern, responsive personal portfolio website built with React.js, featuring s
 - **EmailJS** (4.4.1) - Email service integration
 - **PostCSS** & **Autoprefixer** - CSS processing
 - **ESLint** - Code linting and quality
+
 
 ## 📂 Project Structure
 
@@ -80,6 +84,7 @@ Personal-Portfolio/
 └── package.json
 ```
 
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -118,6 +123,7 @@ Personal-Portfolio/
    
    Navigate to `http://localhost:5173`
 
+
 ## 📦 Build for Production
 
 ```bash
@@ -131,6 +137,7 @@ The optimized production build will be generated in the `dist/` directory.
 ```bash
 npm run preview
 ```
+
 
 ## 🎨 Customization
 
@@ -164,6 +171,7 @@ Edit the data files in `src/data/` to customize your portfolio content:
 3. Create an email template
 4. Copy your Service ID, Template ID, and Public Key
 5. Add them to your `.env` file
+
 
 ## 🌐 Deployment
 
@@ -200,6 +208,7 @@ Run:
 npm run deploy
 ```
 
+
 ## 📱 Sections
 
 - **Hero** - Introduction with animated background
@@ -212,6 +221,7 @@ npm run deploy
 - **Contact** - Contact form with EmailJS integration
 - **Footer** - Social links and copyright
 
+
 ## 🎯 Performance Optimizations
 
 - ⚡ Vite for fast builds and HMR
@@ -219,6 +229,7 @@ npm run deploy
 - 📦 Code splitting and lazy loading
 - 🎨 Tailwind CSS purging for minimal CSS
 - 🚀 Production build optimization
+
 
 
 ## 👤 Author
