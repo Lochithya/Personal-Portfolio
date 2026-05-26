@@ -96,7 +96,7 @@ const Navbar = () => {
         className="absolute inset-0 -z-10 bg-white/10 dark:bg-black/20 backdrop-blur-xl border-b border-white/20 dark:border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)]"
       />
       <div className="container mx-auto px-6 md:px-12 relative">
-        <div className="flex items-center justify-between h-20 md:h-14">
+        <div className="flex items-center justify-between h-14">
           
           {/* Left: Logo */}
           <div className="flex-shrink-0">
@@ -148,7 +148,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Controls */}
-        <div className="md:hidden flex items-center gap-3 flex-shrink-0">
+        <div className="lg:hidden flex items-center gap-3 flex-shrink-0">
           <button
             className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}

@@ -86,7 +86,8 @@ const Articles = () => {
 
         {/* Carousel */}
         <div className="relative mx-auto max-w-[85rem]">
-          <div className="flex items-center gap-6 md:gap-8">
+          {/* Desktop: Arrows on sides */}
+          <div className="hidden md:flex items-center gap-6 md:gap-8">
             {/* Left Arrow */}
             <button
               type="button"
@@ -129,6 +130,56 @@ const Articles = () => {
             >
               <FaChevronRight />
             </button>
+          </div>
+
+          {/* Mobile: Cards full width, arrows below */}
+          <div className="md:hidden">
+            <motion.div
+              layout
+              className="grid grid-cols-1 gap-6"
+            >
+              <AnimatePresence mode="popLayout">
+                {visibleArticles.map((article) => (
+                  <motion.div
+                    layout
+                    initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95, y: -20 }}
+                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                    key={article.id}
+                  >
+                    <ArticleCard article={article} />
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </motion.div>
+
+            {/* Mobile Navigation Arrows */}
+            {maxIndex > 0 && (
+              <div className="mt-6 flex items-center justify-center gap-4">
+                <button
+                  type="button"
+                  onClick={goPrev}
+                  disabled={currentIndex === 0}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white backdrop-blur-md transition-all hover:border-[#22c55e] hover:bg-[#22c55e]/20 disabled:pointer-events-none disabled:opacity-30"
+                  aria-label="Previous articles"
+                >
+                  <FaChevronLeft />
+                </button>
+                <span className="text-sm text-gray-400">
+                  {currentIndex + 1} / {maxIndex + 1}
+                </span>
+                <button
+                  type="button"
+                  onClick={goNext}
+                  disabled={currentIndex >= maxIndex}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white backdrop-blur-md transition-all hover:border-[#22c55e] hover:bg-[#22c55e]/20 disabled:pointer-events-none disabled:opacity-30"
+                  aria-label="Next articles"
+                >
+                  <FaChevronRight />
+                </button>
+              </div>
+            )}
           </div>
 
           {/* Pagination dots */}

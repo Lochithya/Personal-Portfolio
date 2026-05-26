@@ -23,7 +23,7 @@ const Education = () => {
           {/* Vertical Timeline */}
           <div className="relative">
             {/* Timeline line - center */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#22c55e]/50 via-[#22c55e] to-[#22c55e]/50 transform -translate-x-1/2 shadow-lg" />
+            <div className="absolute left-3 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#22c55e]/50 via-[#22c55e] to-[#22c55e]/50 md:-translate-x-1/2 shadow-lg" />
 
             {/* Timeline items - alternating left/right */}
             <div className="space-y-12">
@@ -39,16 +39,16 @@ const Education = () => {
                     className="relative"
                   >
                     {/* Timeline dot - center */}
-                    <div className="absolute left-1/2 top-0 w-6 h-6 bg-[#22c55e] rounded-full transform -translate-x-1/2 shadow-[0_0_20px_rgba(34,197,94,0.6)] border-4 border-gray-50 dark:border-[#030303] z-20" />
+                    <div className="absolute left-3 md:left-1/2 top-0 w-5 h-5 md:w-6 md:h-6 bg-[#22c55e] rounded-full -translate-x-1/2 shadow-[0_0_20px_rgba(34,197,94,0.6)] border-[3px] md:border-4 border-gray-50 dark:border-[#030303] z-20" />
 
                     {/* Content - alternating left/right */}
-                    <div className={`w-full md:w-[calc(50%-3px)] ${isLeft ? 'md:mr-auto md:pr-4' : 'md:ml-auto md:pl-4'}`}>
+                    <div className={`ml-10 md:ml-0 w-auto md:w-[calc(50%-3px)] ${isLeft ? 'md:mr-auto md:pr-4' : 'md:ml-auto md:pl-4'}`}>
                       <motion.div
                         initial={{ opacity: 0, x: isLeft ? -20 : 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: index * 0.2 + 0.1 }}
-                        className={`glass-hover glass group rounded-2xl p-4 md:p-6 border-2 border-transparent hover:border-[#22c55e]/50 transition-all duration-300 ${isLeft ? 'text-right' : 'text-left'}`}
+                        className={`glass-hover glass group rounded-2xl p-4 md:p-6 border-2 border-transparent hover:border-[#22c55e]/50 transition-all duration-300 text-left ${isLeft ? 'md:text-right' : 'md:text-left'}`}
                       >
                       {/* Date badge */}
                         <div className="mb-3">
@@ -68,7 +68,7 @@ const Education = () => {
                         </h4>
 
                         {/* Divider */}
-                        <div className={`h-0.5 bg-gradient-to-r from-[#22c55e]/0 via-[#22c55e] to-[#22c55e]/0 rounded-full mb-3 ${isLeft ? 'ml-auto w-8' : ''}`} />
+                        <div className={`h-0.5 bg-gradient-to-r from-[#22c55e]/0 via-[#22c55e] to-[#22c55e]/0 rounded-full mb-3 ${isLeft ? 'md:ml-auto w-8' : ''}`} />
 
                         {/* Details */}
                         <div className="space-y-2 mb-3">

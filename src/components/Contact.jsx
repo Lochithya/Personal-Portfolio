@@ -108,14 +108,14 @@ const Contact = () => {
           subtitle="Let's connect! I'm always open to discussing new opportunities."
         />
 
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Form — left, glass panel */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.55 }}
-            className="glass-contact-panel p-7 md:p-9"
+            className="glass-contact-panel p-5 sm:p-7 md:p-9"
           >
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
               <div className="space-y-2">

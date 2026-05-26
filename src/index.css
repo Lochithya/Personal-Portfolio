@@ -6,6 +6,11 @@
   body {
     @apply bg-light-bg text-gray-800 dark:bg-[#030303] dark:text-gray-200 antialiased font-sans overflow-x-hidden transition-colors duration-300;
   }
+  
+  /* Sections let their inner containers handle horizontal padding */
+  section {
+    @apply relative;
+  }
 }
 
 @layer utilities {

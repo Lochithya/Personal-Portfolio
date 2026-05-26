@@ -66,11 +66,11 @@ const Hero = () => {
           {/* Title */}
           <motion.h1
             variants={itemVariants}
-            className="relative z-10 text-[2.35rem] sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] font-heading font-bold mb-6 text-white leading-[1.12] tracking-tight"
+            className="relative z-10 text-[1.75rem] sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] font-heading font-bold mb-6 text-white leading-[1.12] tracking-tight"
           >
-            <span style={{fontFamily:'Inter'}}>Lochithya</span>
+            <span style={{fontFamily:'Inter'}} className="text-[1.75rem] sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem]">Lochithya</span>
             <br />
-            <span className="text-[#349E5D]" style={{fontFamily:'Inter', fontSize:'75px'}}>Hettiarachchi</span>
+            <span className="text-[#349E5D] text-[2.25rem] sm:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem]" style={{fontFamily:'Inter'}}>Hettiarachchi</span>
           </motion.h1>
 
           {/* Bio */}
@@ -82,19 +82,19 @@ const Hero = () => {
           </motion.p>
 
           {/* CTA Buttons */}
-          <motion.div variants={itemVariants} className="relative z-10 mb-14 flex flex-wrap items-center gap-4">
+          <motion.div variants={itemVariants} className="relative z-10 mb-10 sm:mb-14 flex flex-wrap items-center gap-3 sm:gap-4">
             <Link
               to="contact"
               smooth={true}
               duration={500}
-              className="inline-flex items-center justify-center px-9 py-3.5 rounded-full bg-white text-black font-semibold text-sm tracking-wide hover:bg-gray-100 hover:shadow-[0_0_28px_rgba(255,255,255,0.25)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 cursor-pointer"
+              className="inline-flex items-center justify-center px-7 sm:px-9 py-3 sm:py-3.5 rounded-full bg-white text-black font-semibold text-sm tracking-wide hover:bg-gray-100 hover:shadow-[0_0_28px_rgba(255,255,255,0.25)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 cursor-pointer"
             >
               Get in Touch
             </Link>
             <a
               href="/resume/Lochithya_Hettiarachchi_Resume.pdf"
               download="Lochithya_Hettiarachchi_Resume.pdf"
-              className="inline-flex items-center justify-center gap-2 px-9 py-3.5 rounded-full bg-white/10 backdrop-blur-xl border border-white/40 text-white font-semibold text-sm tracking-wide hover:bg-white/20 hover:border-white/50 hover:shadow-[0_8px_32px_0_rgba(255,255,255,0.28)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 px-7 sm:px-9 py-3 sm:py-3.5 rounded-full bg-white/10 backdrop-blur-xl border border-white/40 text-white font-semibold text-sm tracking-wide hover:bg-white/20 hover:border-white/50 hover:shadow-[0_8px_32px_0_rgba(255,255,255,0.28)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -106,17 +106,17 @@ const Hero = () => {
           {/* Stats — Projects & Technologies only */}
           <motion.div
             variants={itemVariants}
-            className="relative z-10 flex flex-wrap items-center gap-4 md:gap-8 border-t border-white/[0.06] pt-8"
+            className="relative z-10 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-4 sm:gap-6 md:gap-8 border-t border-white/[0.06] pt-8"
           >
             {heroStats.map((stat, index) => (
               <div
                 key={stat.label}
-                className={`${index > 0 ? 'pl-6 md:pl-10 border-l border-[#22c55e]/35' : ''}`}
+                className={`${index > 0 && index % 2 === 0 ? '' : index > 0 ? 'sm:pl-6 md:pl-10 sm:border-l border-[#22c55e]/35' : ''}`}
               >
-                <h3 className="text-3xl md:text-[2rem] font-bold text-[#4ade80] mb-1.5 leading-none tabular-nums">
+                <h3 className="text-2xl sm:text-3xl md:text-[2rem] font-bold text-[#4ade80] mb-1.5 leading-none tabular-nums">
                   {stat.value}
                 </h3>
-                <p className="text-[10px] md:text-[11px] text-gray-500 uppercase tracking-[0.14em] leading-snug font-medium">
+                <p className="text-[9px] sm:text-[10px] md:text-[11px] text-gray-500 uppercase tracking-[0.14em] leading-snug font-medium">
                   {stat.label}
                   {stat.sub && (
                     <>
@@ -138,7 +138,7 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
         >
-          <div className="relative w-full max-w-[360px] sm:max-w-[420px] lg:max-w-[450px]">
+          <div className="relative w-full max-w-[280px] sm:max-w-[360px] md:max-w-[420px] lg:max-w-[450px]">
             {/* Ambient glow behind portrait */}
             <div
               className="pointer-events-none absolute -inset-4 rounded-[2rem] bg-[#22c55e]/8 blur-3xl opacity-50"
@@ -168,12 +168,12 @@ const Hero = () => {
                 </div>
 
                 {/* Tech icons bar */}
-                <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-4 px-5 py-2.5 rounded-full border border-[#4ade80]/25 bg-black/70 backdrop-blur-md shadow-[0_0_30px_rgba(74,222,128,0.2)] z-10">
-                  <FaReact className="text-[#4ade80] text-lg hover:scale-125 transition-transform cursor-pointer" />
-                  <FaNodeJs className="text-[#4ade80] text-lg hover:scale-125 transition-transform cursor-pointer" />
-                  <SiNextdotjs className="text-[#4ade80] text-lg hover:scale-125 transition-transform cursor-pointer" />
-                  <SiTailwindcss className="text-[#4ade80] text-lg hover:scale-125 transition-transform cursor-pointer" />
-                  <FaGithub className="text-[#4ade80] text-lg hover:scale-125 transition-transform cursor-pointer" />
+                <div className="absolute bottom-3 sm:bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-2 sm:gap-4 px-3 sm:px-5 py-2 sm:py-2.5 rounded-full border border-[#4ade80]/25 bg-black/70 backdrop-blur-md shadow-[0_0_30px_rgba(74,222,128,0.2)] z-10">
+                  <FaReact className="text-[#4ade80] text-base sm:text-lg hover:scale-125 transition-transform cursor-pointer" />
+                  <FaNodeJs className="text-[#4ade80] text-base sm:text-lg hover:scale-125 transition-transform cursor-pointer" />
+                  <SiNextdotjs className="text-[#4ade80] text-base sm:text-lg hover:scale-125 transition-transform cursor-pointer" />
+                  <SiTailwindcss className="text-[#4ade80] text-base sm:text-lg hover:scale-125 transition-transform cursor-pointer" />
+                  <FaGithub className="text-[#4ade80] text-base sm:text-lg hover:scale-125 transition-transform cursor-pointer" />
                 </div>
               </div>
             </div>

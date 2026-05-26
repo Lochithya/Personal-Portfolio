@@ -28,7 +28,7 @@ const About = () => {
               className="flex flex-col justify-start text-left self-start"
             >
               {/* Heading starts at the very top to align horizontally with the right side */}
-              <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-white mb-6 leading-tight tracking-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white mb-6 leading-tight tracking-tight">
                 Crafting <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-[#22c55e]">Experiences</span>
                 <br />
                 That Drive Value
@@ -51,11 +51,11 @@ const About = () => {
               </div>
 
               {/* Stats at bottom of left section */}
-              <div className="flex flex-wrap gap-x-10 gap-y-6 pt-6 border-t border-gray-800/40">
+              <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-x-6 sm:gap-x-10 gap-y-6 pt-6 border-t border-gray-800/40">
                 {personalInfo.stats.map((stat, index) => (
-                  <div key={index} className="border-l-[3px] border-[#22c55e] pl-4 text-left">
-                    <h4 className="text-3xl font-extrabold text-white font-heading leading-none mb-1">{stat.value}</h4>
-                    <p className="text-xs text-gray-500 font-medium tracking-wide">{stat.label}</p>
+                  <div key={index} className="border-l-[3px] border-[#22c55e] pl-3 sm:pl-4 text-left">
+                    <h4 className="text-2xl sm:text-3xl font-extrabold text-white font-heading leading-none mb-1">{stat.value}</h4>
+                    <p className="text-[10px] sm:text-xs text-gray-500 font-medium tracking-wide">{stat.label}</p>
                   </div>
                 ))}
               </div>

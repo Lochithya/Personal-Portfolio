@@ -7,10 +7,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-gray-200 dark:border-[#22c55e]/15 pt-16 pb-8 transition-colors duration-300">
+    <footer className="relative border-t border-gray-200 dark:border-[#22c55e]/15 pt-12 sm:pt-16 pb-8 transition-colors duration-300">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#22c55e]/35 to-transparent" aria-hidden />
       <div className="container mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-12">
           
           {/* Brand & Bio */}
           <div className="lg:col-span-1">
