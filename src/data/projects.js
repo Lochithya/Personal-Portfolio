@@ -32,7 +32,7 @@ export const projects = [
     tech: ["React", "JavaScript", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/Lochithya",
     demo: "#",
-    image: "/images/projects/Portfolio.png",
+    image: "/images/projects/portfolio.png",
     highlight: "React | Framer Motion"
   },
   {
