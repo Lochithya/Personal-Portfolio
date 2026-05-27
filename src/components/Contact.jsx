@@ -114,7 +114,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="relative overflow-hidden py-20 transition-colors duration-300">
+    <section id="contact" className="relative overflow-hidden py-12 transition-colors duration-300">
       <SectionDecor flip />
       <div className="container relative z-0 mx-auto px-6 md:px-12">
         <SectionTitle

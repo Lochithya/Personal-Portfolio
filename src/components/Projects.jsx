@@ -142,7 +142,7 @@ const Projects = () => {
   const goNext = () => setCurrentIndex((p) => Math.min(maxIndex, p + 1));
 
   return (
-    <section id="projects" className="relative overflow-hidden py-24 transition-colors duration-300">
+    <section id="projects" className="relative overflow-hidden py-12 transition-colors duration-300">
       <SectionDecor flip />
       <div className="container relative z-0 mx-auto px-6 md:px-12">
         <SectionTitle

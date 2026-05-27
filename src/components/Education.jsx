@@ -6,7 +6,7 @@ import { education } from '../data/education';
 
 const Education = () => {
   return (
-    <section id="education" className="py-24 relative overflow-hidden">
+    <section id="education" className="py-12 relative overflow-hidden">
       <SectionDecor flip />
 
       <div className="pointer-events-none absolute inset-0 hidden lg:block -z-10">

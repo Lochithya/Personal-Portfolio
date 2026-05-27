@@ -59,7 +59,7 @@ const levelBadgeStyles = {
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24 relative overflow-hidden">
+    <section id="skills" className="py-12 relative overflow-hidden">
       <SectionDecor />
       <div className="absolute inset-0 -z-10 opacity-[0.22] pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-[#22c55e]/6 rounded-full blur-3xl animate-pulse" />

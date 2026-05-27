@@ -73,7 +73,7 @@ const Articles = () => {
   };
 
   return (
-    <section id="articles" className="relative overflow-hidden py-24 transition-colors duration-300">
+    <section id="articles" className="relative overflow-hidden py-12 transition-colors duration-300">
       <SectionDecor flip />
       <div className="pointer-events-none absolute inset-0 hidden lg:block -z-10">
         <div className="absolute left-[-20%] top-[15%] aspect-square w-[min(100%,550px)] rounded-full border border-white/5 bg-gradient-to-br from-white/[0.02] to-transparent shadow-[inset_0_0_60px_rgba(255,255,255,0.02)]" />

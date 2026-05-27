@@ -27,7 +27,7 @@ const Hero = () => {
   ];
 
   return (
-    <section id="home" className="relative isolate min-h-[90vh] lg:min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative isolate min-h-[90vh] lg:min-h-screen flex items-center justify-center overflow-hidden pb-12">
 
       {/* Section back layer — glows & design elements */}
       <div className="absolute inset-0 -z-20 pointer-events-none overflow-hidden" aria-hidden>

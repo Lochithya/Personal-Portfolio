@@ -161,7 +161,7 @@ const TimelineCard = ({ exp, index }) => {
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-24 relative overflow-hidden transition-colors duration-300">
+    <section id="experience" className="py-12 relative overflow-hidden transition-colors duration-300">
       <SectionDecor />
       <CircleArcAccent side="left" />
 
@@ -184,8 +184,8 @@ const Experience = () => {
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
           className="mt-20 max-w-4xl mx-auto"
         >
           <div className="mb-8">
@@ -202,8 +202,8 @@ const Experience = () => {
                 key={label}
                 initial={{ opacity: 0, scale: 0.85, y: 20 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.35 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
                 whileHover={{ translateY: -8, transition: { duration: 0.3 } }}
                 className="group relative"
               >
@@ -216,8 +216,8 @@ const Experience = () => {
                   <motion.div 
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.35 + i * 0.1 + 0.1 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.4, delay: i * 0.1 + 0.1 }}
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     className={`w-12 h-12 rounded-full bg-gradient-to-br ${color} opacity-10 group-hover:opacity-20 border border-white/10 flex items-center justify-center mb-4 transition-all duration-300`}
                   >
@@ -229,8 +229,8 @@ const Experience = () => {
                     <motion.span 
                       initial={{ opacity: 0, scale: 0.9 }}
                       whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: 0.35 + i * 0.1 + 0.15 }}
+                      viewport={{ once: true, margin: "-100px" }}
+                      transition={{ duration: 0.4, delay: i * 0.1 + 0.15 }}
                       className="block text-3xl md:text-4xl font-extrabold text-white font-heading"
                     >
                       {value}
