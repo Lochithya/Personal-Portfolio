@@ -37,7 +37,7 @@ const Footer = () => {
           <div className="grid grid-cols-2 gap-8 sm:gap-10 lg:col-span-2 lg:grid-cols-2">
             {/* Quick Navigation */}
             <div>
-              <h4 className="text-gray-900 dark:text-white font-semibold mb-8 uppercase tracking-wider text-sm transition-colors duration-300 flex items-center gap-2">
+              <h4 className="text-gray-900 dark:text-white font-semibold mb-6 uppercase tracking-wider text-sm transition-colors duration-300 flex items-center gap-2">
                 <FaCode className="text-[#22c55e]" /> Navigation
               </h4>
               <ul className="space-y-3">
@@ -88,41 +88,50 @@ const Footer = () => {
             
             {/* Socials */}
             <div>
-              <h4 className="text-gray-900 dark:text-white font-semibold mb-8 uppercase tracking-wider text-sm transition-colors duration-300 flex items-center gap-2">
+              <h4 className="text-gray-900 dark:text-white font-semibold mb-6 uppercase tracking-wider text-sm transition-colors duration-300 flex items-center gap-2">
                 <FaBriefcase className="text-[#22c55e]" /> Socials
               </h4>
-              <ul className="space-y-4 mb-10">
+              <ul className="space-y-3">
                 <li>
-                  <a href={personalInfo.github} target="_blank" rel="noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors text-sm flex items-center justify-center gap-2 group">
-                    <FaGithub className="text-lg" />
-                    <span className="hidden sm:inline">GitHub Profile</span>
+                  <a href={personalInfo.github} target="_blank" rel="noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors text-sm flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-gray-900 dark:group-hover:bg-white transition-colors"></span>
+                    GitHub Profile
                   </a>
                 </li>
                 <li>
-                  <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-[#0a66c2] transition-colors text-sm flex items-center justify-center gap-2 group">
-                    <FaLinkedin className="text-lg" />
-                    <span className="hidden sm:inline">LinkedIn Profile</span>
+                  <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-[#0a66c2] transition-colors text-sm flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-[#0a66c2] transition-colors"></span>
+                    LinkedIn Profile
                   </a>
                 </li>
                 <li>
-                  <a href={personalInfo.medium} target="_blank" rel="noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors text-sm flex items-center justify-center gap-2 group">
-                    <FaMedium className="text-lg" />
-                    <span className="hidden sm:inline">Medium Articles</span>
+                  <a href={personalInfo.medium} target="_blank" rel="noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors text-sm flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-gray-900 dark:group-hover:bg-white transition-colors"></span>
+                    Medium Articles
                   </a>
                 </li>
               </ul>
-
-              {/* Contact section below socials */}
-              <div className="border-t border-gray-200 dark:border-gray-700 pt-8">
-                <h4 className="text-gray-900 dark:text-white font-semibold mb-4 uppercase tracking-wider text-xs transition-colors duration-300">
-                  Contact
-                </h4>
-                <a href={`mailto:${personalInfo.email}`} className="text-gray-600 dark:text-gray-400 hover:text-[#22c55e] dark:hover:text-[#22c55e] transition-colors text-sm flex items-center justify-center gap-2 group">
-                  <FaEnvelope className="text-lg text-[#22c55e]" />
-                  <span className="hidden sm:inline">{personalInfo.email}</span>
-                </a>
-              </div>
             </div>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="text-gray-900 dark:text-white font-semibold mb-6 uppercase tracking-wider text-sm transition-colors duration-300 flex items-center gap-2">
+              <FaUser className="text-[#22c55e]" /> Contact
+            </h4>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-[#22c55e] flex-shrink-0 mt-0.5">
+                  <FaEnvelope className="text-sm" />
+                </div>
+                <div>
+                  <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider mb-1">Email</p>
+                  <a href={`mailto:${personalInfo.email}`} className="text-gray-600 dark:text-gray-400 hover:text-[#22c55e] dark:hover:text-[#22c55e] transition-colors text-sm">
+                    {personalInfo.email}
+                  </a>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
 
