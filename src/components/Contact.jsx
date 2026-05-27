@@ -5,11 +5,13 @@ import { SectionTitle } from './ui/SectionTitle';
 import { SectionDecor } from './ui/SectionDecor';
 import { personalInfo } from '../data/personalInfo';
 import { FaMapMarkerAlt, FaEnvelope, FaGithub, FaLinkedin, FaMedium, FaPaperPlane } from 'react-icons/fa';
+import ReCaptcha from 'react-google-recaptcha' ;
 
 const Contact = () => {
   const formRef = useRef();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [captchaValue, setCaptchaValue] = useState(null) ;
   const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
     user_name: '',
@@ -42,16 +44,20 @@ const Contact = () => {
 
   const validateForm = () => {
     const newErrors = {};
+
     Object.keys(formData).forEach((key) => {
       const err = validateField(key, formData[key]);
       if (err) newErrors[key] = err;
     });
+
     setErrors(newErrors);
+
     return Object.keys(newErrors).length === 0;
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setFormData((prev) => ({ ...prev, [name]: value }));
     // Clear error as user types
     if (errors[name]) {
@@ -61,13 +67,21 @@ const Contact = () => {
 
   const handleBlur = (e) => {
     const { name, value } = e.target;
+
     const err = validateField(name, value);
+
     setErrors((prev) => ({ ...prev, [name]: err }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (!validateForm()) return;
+
+    if(!captchaValue){
+      alert("Please verify the captcha") ;
+      return ; 
+    }
 
     setIsSubmitting(true);
     emailjs
@@ -168,6 +182,12 @@ const Contact = () => {
                 />
                 {errors.message && <p className="text-xs text-red-400">{errors.message}</p>}
               </div>
+
+              <ReCaptcha                                                                // for verificatio process
+                sitekey = {import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                onChange = {(value)=> setCaptchaValue(value)}
+              />
+
 
               <button
                 type="submit"
