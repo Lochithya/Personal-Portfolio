@@ -10,7 +10,7 @@ const Footer = () => {
     <footer className="relative border-t border-gray-200 dark:border-[#22c55e]/15 pt-12 sm:pt-16 pb-8 transition-colors duration-300">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#22c55e]/35 to-transparent" aria-hidden />
       <div className="container mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-12">
           
           {/* Brand & Bio */}
           <div className="lg:col-span-1">
@@ -33,88 +33,91 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Navigation */}
-          <div>
-            <h4 className="text-gray-900 dark:text-white font-semibold mb-6 uppercase tracking-wider text-sm transition-colors duration-300 flex items-center gap-2">
-              <FaCode className="text-[#22c55e]" /> Navigation
-            </h4>
-            <ul className="space-y-3">
-              <li>
-                <Link to="about" smooth={true} duration={500} className="text-gray-600 dark:text-gray-400 hover:text-[#22c55e] dark:hover:text-[#22c55e] cursor-pointer transition-colors text-sm flex items-center gap-2 group">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-[#22c55e] transition-colors"></span>
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link to="education" smooth={true} duration={500} className="text-gray-600 dark:text-gray-400 hover:text-[#22c55e] dark:hover:text-[#22c55e] cursor-pointer transition-colors text-sm flex items-center gap-2 group">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-[#22c55e] transition-colors"></span>
-                  Education
-                </Link>
-              </li>
-              <li>
-                <Link to="skills" smooth={true} duration={500} className="text-gray-600 dark:text-gray-400 hover:text-[#22c55e] dark:hover:text-[#22c55e] cursor-pointer transition-colors text-sm flex items-center gap-2 group">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-[#22c55e] transition-colors"></span>
-                  Skills
-                </Link>
-              </li>
-              <li>
-                <Link to="projects" smooth={true} duration={500} className="text-gray-600 dark:text-gray-400 hover:text-[#22c55e] dark:hover:text-[#22c55e] cursor-pointer transition-colors text-sm flex items-center gap-2 group">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-[#22c55e] transition-colors"></span>
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link to="articles" smooth={true} duration={500} className="text-gray-600 dark:text-gray-400 hover:text-[#22c55e] dark:hover:text-[#22c55e] cursor-pointer transition-colors text-sm flex items-center gap-2 group">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-[#22c55e] transition-colors"></span>
-                  Articles
-                </Link>
-              </li>
-              <li>
-                <Link to="experience" smooth={true} duration={500} className="text-gray-600 dark:text-gray-400 hover:text-[#22c55e] dark:hover:text-[#22c55e] cursor-pointer transition-colors text-sm flex items-center gap-2 group">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-[#22c55e] transition-colors"></span>
-                  Experience
-                </Link>
-              </li>
-              <li>
-                <Link to="contact" smooth={true} duration={500} className="text-gray-600 dark:text-gray-400 hover:text-[#22c55e] dark:hover:text-[#22c55e] cursor-pointer transition-colors text-sm flex items-center gap-2 group">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-[#22c55e] transition-colors"></span>
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-          
-          {/* Socials */}
-          <div>
-            <h4 className="text-gray-900 dark:text-white font-semibold mb-6 uppercase tracking-wider text-sm transition-colors duration-300 flex items-center gap-2">
-              <FaBriefcase className="text-[#22c55e]" /> Socials
-            </h4>
-            <ul className="space-y-3">
-              <li>
-                <a href={personalInfo.github} target="_blank" rel="noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors text-sm flex items-center gap-2 group">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-gray-900 dark:group-hover:bg-white transition-colors"></span>
-                  GitHub Profile
-                </a>
-              </li>
-              <li>
-                <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-[#0a66c2] transition-colors text-sm flex items-center gap-2 group">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-[#0a66c2] transition-colors"></span>
-                  LinkedIn Profile
-                </a>
-              </li>
-              <li>
-                <a href={personalInfo.medium} target="_blank" rel="noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors text-sm flex items-center gap-2 group">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-gray-900 dark:group-hover:bg-white transition-colors"></span>
-                  Medium Articles
-                </a>
-              </li>
-              <li>
-                <Link to="contact" smooth={true} duration={500} className="text-gray-600 dark:text-gray-400 hover:text-[#22c55e] dark:hover:text-[#22c55e] cursor-pointer transition-colors text-sm flex items-center gap-2 group">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-[#22c55e] transition-colors"></span>
-                  Get in Touch
-                </Link>
-              </li>
-            </ul>
+          {/* Navigation and Socials side by side on mobile */}
+          <div className="grid grid-cols-2 gap-8 sm:gap-10 lg:col-span-2 lg:grid-cols-2">
+            {/* Quick Navigation */}
+            <div>
+              <h4 className="text-gray-900 dark:text-white font-semibold mb-6 uppercase tracking-wider text-sm transition-colors duration-300 flex items-center gap-2">
+                <FaCode className="text-[#22c55e]" /> Navigation
+              </h4>
+              <ul className="space-y-3">
+                <li>
+                  <Link to="about" smooth={true} duration={500} className="text-gray-600 dark:text-gray-400 hover:text-[#22c55e] dark:hover:text-[#22c55e] cursor-pointer transition-colors text-sm flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-[#22c55e] transition-colors"></span>
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link to="education" smooth={true} duration={500} className="text-gray-600 dark:text-gray-400 hover:text-[#22c55e] dark:hover:text-[#22c55e] cursor-pointer transition-colors text-sm flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-[#22c55e] transition-colors"></span>
+                    Education
+                  </Link>
+                </li>
+                <li>
+                  <Link to="skills" smooth={true} duration={500} className="text-gray-600 dark:text-gray-400 hover:text-[#22c55e] dark:hover:text-[#22c55e] cursor-pointer transition-colors text-sm flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-[#22c55e] transition-colors"></span>
+                    Skills
+                  </Link>
+                </li>
+                <li>
+                  <Link to="projects" smooth={true} duration={500} className="text-gray-600 dark:text-gray-400 hover:text-[#22c55e] dark:hover:text-[#22c55e] cursor-pointer transition-colors text-sm flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-[#22c55e] transition-colors"></span>
+                    Projects
+                  </Link>
+                </li>
+                <li>
+                  <Link to="articles" smooth={true} duration={500} className="text-gray-600 dark:text-gray-400 hover:text-[#22c55e] dark:hover:text-[#22c55e] cursor-pointer transition-colors text-sm flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-[#22c55e] transition-colors"></span>
+                    Articles
+                  </Link>
+                </li>
+                <li>
+                  <Link to="experience" smooth={true} duration={500} className="text-gray-600 dark:text-gray-400 hover:text-[#22c55e] dark:hover:text-[#22c55e] cursor-pointer transition-colors text-sm flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-[#22c55e] transition-colors"></span>
+                    Experience
+                  </Link>
+                </li>
+                <li>
+                  <Link to="contact" smooth={true} duration={500} className="text-gray-600 dark:text-gray-400 hover:text-[#22c55e] dark:hover:text-[#22c55e] cursor-pointer transition-colors text-sm flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-[#22c55e] transition-colors"></span>
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            
+            {/* Socials */}
+            <div>
+              <h4 className="text-gray-900 dark:text-white font-semibold mb-6 uppercase tracking-wider text-sm transition-colors duration-300 flex items-center gap-2">
+                <FaBriefcase className="text-[#22c55e]" /> Socials
+              </h4>
+              <ul className="space-y-3">
+                <li>
+                  <a href={personalInfo.github} target="_blank" rel="noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors text-sm flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-gray-900 dark:group-hover:bg-white transition-colors"></span>
+                    GitHub Profile
+                  </a>
+                </li>
+                <li>
+                  <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-[#0a66c2] transition-colors text-sm flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-[#0a66c2] transition-colors"></span>
+                    LinkedIn Profile
+                  </a>
+                </li>
+                <li>
+                  <a href={personalInfo.medium} target="_blank" rel="noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors text-sm flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-gray-900 dark:group-hover:bg-white transition-colors"></span>
+                    Medium Articles
+                  </a>
+                </li>
+                <li>
+                  <Link to="contact" smooth={true} duration={500} className="text-gray-600 dark:text-gray-400 hover:text-[#22c55e] dark:hover:text-[#22c55e] cursor-pointer transition-colors text-sm flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-[#22c55e] transition-colors"></span>
+                    Get in Touch
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Contact Info */}

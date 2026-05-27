@@ -192,7 +192,7 @@ const Experience = () => {
             <h4 className="text-center text-sm font-semibold text-gray-400 uppercase tracking-widest">Quick Stats</h4>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6">
             {[
               { value: '11+', label: 'Months Industry Experience', icon: FaBriefcase, color: 'from-emerald-500 to-green-400' },
               { value: '1', label: 'Leadership Role', icon: FaUserTie, color: 'from-sky-500 to-cyan-400' },
@@ -207,7 +207,7 @@ const Experience = () => {
                 whileHover={{ translateY: -8, transition: { duration: 0.3 } }}
                 className="group relative"
               >
-                <div className="relative h-full overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.015] backdrop-blur-[32px] shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.05)] p-6 md:p-7 transition-all duration-500 hover:border-white/[0.12] hover:bg-white/[0.025] hover:shadow-[0_12px_40px_rgba(0,0,0,0.25),inset_0_1px_0_rgba(255,255,255,0.06)]">
+                <div className="relative h-full overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.015] backdrop-blur-[32px] shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.05)] p-4 sm:p-6 md:p-7 transition-all duration-500 hover:border-white/[0.12] hover:bg-white/[0.025] hover:shadow-[0_12px_40px_rgba(0,0,0,0.25),inset_0_1px_0_rgba(255,255,255,0.06)]">
                   
                   {/* Top accent bar */}
                   <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
@@ -219,9 +219,9 @@ const Experience = () => {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.4, delay: i * 0.1 + 0.1 }}
                     whileHover={{ scale: 1.1, rotate: 5 }}
-                    className={`w-12 h-12 rounded-full bg-gradient-to-br ${color} opacity-10 group-hover:opacity-20 border border-white/10 flex items-center justify-center mb-4 transition-all duration-300`}
+                    className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br ${color} opacity-10 group-hover:opacity-20 border border-white/10 flex items-center justify-center mb-3 sm:mb-4 transition-all duration-300`}
                   >
-                    <Icon className={`text-lg bg-gradient-to-r ${color} bg-clip-text text-transparent`} />
+                    <Icon className={`text-base sm:text-lg bg-gradient-to-r ${color} bg-clip-text text-transparent`} />
                   </motion.div>
 
                   {/* Stats content */}
@@ -231,11 +231,11 @@ const Experience = () => {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true, margin: "-100px" }}
                       transition={{ duration: 0.4, delay: i * 0.1 + 0.15 }}
-                      className="block text-3xl md:text-4xl font-extrabold text-white font-heading"
+                      className="block text-2xl sm:text-3xl md:text-4xl font-extrabold text-white font-heading"
                     >
                       {value}
                     </motion.span>
-                    <p className="text-xs md:text-sm text-gray-400 font-medium leading-snug">{label}</p>
+                    <p className="text-[10px] sm:text-xs md:text-sm text-gray-400 font-medium leading-snug">{label}</p>
                   </div>
 
                   {/* Background glow */}
