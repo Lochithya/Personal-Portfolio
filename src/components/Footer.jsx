@@ -20,7 +20,7 @@ const Footer = () => {
             <p className="text-gray-600 dark:text-gray-400 text-sm mb-6 transition-colors duration-300 leading-relaxed">
               {personalInfo.tagline}
             </p>
-            <div className="flex space-x-4">
+            <div className="flex justify-center lg:justify-start space-x-4 mb-8">
               <a href={personalInfo.github} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-[#22c55e] hover:text-white dark:hover:bg-[#22c55e] dark:hover:text-white transition-all duration-300">
                 <FaGithub />
               </a>
@@ -37,7 +37,7 @@ const Footer = () => {
           <div className="grid grid-cols-2 gap-8 sm:gap-10 lg:col-span-2 lg:grid-cols-2">
             {/* Quick Navigation */}
             <div>
-              <h4 className="text-gray-900 dark:text-white font-semibold mb-6 uppercase tracking-wider text-sm transition-colors duration-300 flex items-center gap-2">
+              <h4 className="text-gray-900 dark:text-white font-semibold mb-8 uppercase tracking-wider text-sm transition-colors duration-300 flex items-center gap-2">
                 <FaCode className="text-[#22c55e]" /> Navigation
               </h4>
               <ul className="space-y-3">
@@ -86,11 +86,13 @@ const Footer = () => {
               </ul>
             </div>
             
-            {/* Socials */}
-            <div>
-              <h4 className="text-gray-900 dark:text-white font-semibold mb-6 uppercase tracking-wider text-sm transition-colors duration-300 flex items-center gap-2">
-                <FaBriefcase className="text-[#22c55e]" /> Socials
-              </h4>
+            {/* Socials and Contact */}
+            <div className="space-y-8">
+              {/* Socials */}
+              <div>
+                <h4 className="text-gray-900 dark:text-white font-semibold mb-8 uppercase tracking-wider text-sm transition-colors duration-300 flex items-center gap-2">
+                  <FaBriefcase className="text-[#22c55e]" /> Socials
+                </h4>
               <ul className="space-y-3">
                 <li>
                   <a href={personalInfo.github} target="_blank" rel="noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors text-sm flex items-center gap-2 group">
@@ -112,7 +114,28 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
+
+            {/* Contact Info */}
+            <div>
+              <h4 className="text-gray-900 dark:text-white font-semibold mb-8 uppercase tracking-wider text-sm transition-colors duration-300 flex items-center gap-2">
+                <FaUser className="text-[#22c55e]" /> Contact
+              </h4>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-[#22c55e] flex-shrink-0 mt-0.5">
+                    <FaEnvelope className="text-sm" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider mb-1">Email</p>
+                    <a href={`mailto:${personalInfo.email}`} className="text-gray-600 dark:text-gray-400 hover:text-[#22c55e] dark:hover:text-[#22c55e] transition-colors text-sm">
+                      {personalInfo.email}
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
+        </div>
 
           {/* Contact Info */}
           <div>

@@ -219,13 +219,17 @@ const Experience = () => {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.4, delay: i * 0.1 + 0.1 }}
                     whileHover={{ scale: 1.1, rotate: 5 }}
-                    className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br ${color} opacity-10 group-hover:opacity-20 border border-white/10 flex items-center justify-center mb-3 sm:mb-4 transition-all duration-300`}
+                    className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full ${
+                      i === 0 ? 'bg-gradient-to-br from-emerald-500 to-green-400' :
+                      i === 1 ? 'bg-gradient-to-br from-sky-500 to-cyan-400' :
+                      'bg-gradient-to-br from-amber-500 to-yellow-400'
+                    } flex items-center justify-center mb-3 sm:mb-4 transition-all duration-300 mx-auto`}
                   >
-                    <Icon className={`text-base sm:text-lg bg-gradient-to-r ${color} bg-clip-text text-transparent`} />
+                    <Icon className={`text-base sm:text-lg text-white`} />
                   </motion.div>
 
                   {/* Stats content */}
-                  <div className="space-y-2">
+                  <div className="space-y-2 text-center">
                     <motion.span 
                       initial={{ opacity: 0, scale: 0.9 }}
                       whileInView={{ opacity: 1, scale: 1 }}
