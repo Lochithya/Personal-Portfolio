@@ -62,8 +62,8 @@ const Skills = () => {
     <section id="skills" className="py-12 relative overflow-hidden">
       <SectionDecor />
       <div className="absolute inset-0 -z-10 opacity-[0.22] pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#22c55e]/6 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-[#4ade80]/5 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#22c55e]/6 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-[#4ade80]/5 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-0">
@@ -82,7 +82,7 @@ const Skills = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#4ade80]/5 to-transparent pointer-events-none" />
           
           <motion.div
-            className="flex gap-4 md:gap-6"
+            className="flex gap-4 md:gap-6 will-change-transform"
             animate={{ x: [0, -1920] }}
             transition={{
               duration: 30,
@@ -115,8 +115,8 @@ const Skills = () => {
               key={skillGroup.category}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.12 }}
+              viewport={{ once: true, margin: "50px" }}
+              transition={{ duration: 0.4, delay: index * 0.12 }}
               className="glass-skills-card rounded-2xl p-6 md:p-8"
             >
               {/* Category header — vertical green accent + title */}
@@ -138,8 +138,8 @@ const Skills = () => {
                       key={skill.name}
                       initial={{ opacity: 0, x: -12 }}
                       whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: 0.08 + idx * 0.05 }}
+                      viewport={{ once: true, margin: "50px" }}
+                      transition={{ duration: 0.3, delay: 0.08 + idx * 0.05 }}
                     >
                       <div className="flex gap-3">
                         <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[#22c55e]/20 bg-[#22c55e]/10 text-[#4ade80]">
@@ -165,8 +165,8 @@ const Skills = () => {
                             <motion.div
                               initial={{ width: 0 }}
                               whileInView={{ width: `${progress}%` }}
-                              viewport={{ once: true }}
-                              transition={{ duration: 1, delay: 0.15 + idx * 0.05, ease: 'easeOut' }}
+                              viewport={{ once: true, margin: "50px" }}
+                              transition={{ duration: 0.8, delay: 0.15 + idx * 0.05, ease: 'easeOut' }}
                               className="h-full rounded-full bg-gradient-to-r from-[#4ade80] via-[#22c55e] to-[#34d399] shadow-[0_0_12px_rgba(74,222,128,0.4)]"
                             />
                           </div>

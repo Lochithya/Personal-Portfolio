@@ -55,7 +55,7 @@ const TimelineCard = ({ exp, index }) => {
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: "50px" }}
       transition={{ duration: 0.6, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
       className="relative"
     >
@@ -66,7 +66,7 @@ const TimelineCard = ({ exp, index }) => {
           <motion.div
             initial={{ scale: 0, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "50px" }}
             transition={{ duration: 0.4, delay: index * 0.15 + 0.1 }}
             className={`w-12 h-12 rounded-full bg-gradient-to-br ${cfg.color} ${cfg.glow} flex items-center justify-center z-10 flex-shrink-0 ring-4 ring-[#0c0c0c]`}
           >
@@ -106,7 +106,7 @@ const TimelineCard = ({ exp, index }) => {
                   <motion.div 
                     initial={{ opacity: 0, x: 10 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, margin: "50px" }}
                     transition={{ duration: 0.5, delay: index * 0.15 + 0.2 }}
                     className="flex-shrink-0 inline-flex items-center gap-2 text-xs font-medium text-gray-300 bg-white/[0.06] border border-white/[0.12] rounded-full px-3.5 py-1.5 backdrop-blur-sm"
                   >
@@ -184,8 +184,8 @@ const Experience = () => {
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "50px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="mt-20 max-w-4xl mx-auto"
         >
           <div className="mb-8">
@@ -202,8 +202,8 @@ const Experience = () => {
                 key={label}
                 initial={{ opacity: 0, scale: 0.85, y: 20 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{ once: true, margin: "50px" }}
+                transition={{ duration: 0.6, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
                 whileHover={{ translateY: -8, transition: { duration: 0.3 } }}
                 className="group relative"
               >
@@ -216,8 +216,8 @@ const Experience = () => {
                   <motion.div 
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.4, delay: i * 0.1 + 0.1 }}
+                    viewport={{ once: true, margin: "50px" }}
+                    transition={{ duration: 0.5, delay: i * 0.15, ease: "backOut" }}
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full ${
                       i === 0 ? 'bg-gradient-to-br from-emerald-500 to-green-400' :
@@ -233,8 +233,8 @@ const Experience = () => {
                     <motion.span 
                       initial={{ opacity: 0, scale: 0.9 }}
                       whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true, margin: "-100px" }}
-                      transition={{ duration: 0.4, delay: i * 0.1 + 0.15 }}
+                      viewport={{ once: true, margin: "50px" }}
+                      transition={{ duration: 0.5, delay: i * 0.15 + 0.05, ease: "easeOut" }}
                       className="block text-2xl sm:text-3xl md:text-4xl font-extrabold text-white font-heading"
                     >
                       {value}

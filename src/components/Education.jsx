@@ -34,8 +34,8 @@ const Education = () => {
                     key={item.id}
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                    viewport={{ once: true, margin: "50px" }}
+                    transition={{ duration: 0.8, delay: index * 0.25, ease: [0.22, 1, 0.36, 1] }}
                     className="relative"
                   >
                     {/* Timeline dot - center */}
@@ -46,8 +46,8 @@ const Education = () => {
                       <motion.div
                         initial={{ opacity: 0, x: isLeft ? -20 : 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: index * 0.2 + 0.1 }}
+                        viewport={{ once: true, margin: "50px" }}
+                        transition={{ duration: 0.8, delay: index * 0.25 + 0.15, ease: "easeOut" }}
                         className={`glass-hover glass group rounded-2xl p-4 md:p-6 border-2 border-transparent hover:border-[#22c55e]/50 transition-all duration-300 text-left ${isLeft ? 'md:text-right' : 'md:text-left'}`}
                       >
                       {/* Date badge */}
