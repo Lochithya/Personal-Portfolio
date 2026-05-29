@@ -111,7 +111,7 @@ const Hero = () => {
             {heroStats.map((stat, index) => (
               <div
                 key={stat.label}
-                className={`${index > 0 && index % 2 === 0 ? '' : index > 0 ? 'sm:pl-6 md:pl-10 sm:border-l border-[#22c55e]/35' : ''}`}
+                className={`${index > 0 ? 'sm:pl-6 md:pl-10 sm:border-l border-[#22c55e]/35' : ''}`}
               >
                 <h3 className="text-2xl sm:text-3xl md:text-[2rem] font-bold text-[#4ade80] mb-1.5 leading-none tabular-nums">
                   {stat.value}

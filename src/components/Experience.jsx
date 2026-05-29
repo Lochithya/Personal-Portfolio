@@ -74,9 +74,7 @@ const TimelineCard = ({ exp, index }) => {
           </motion.div>
           
           {/* Vertical connector line (hidden on mobile, shown between cards on md+) */}
-          {index < experience.length - 1 && (
-            <div className="hidden md:block absolute left-[23px] top-12 h-24 w-0.5 bg-gradient-to-b from-white/20 to-transparent" />
-          )}
+          <div className={`hidden md:block absolute left-[23px] top-12 w-0.5 ${index < experience.length - 1 ? 'bottom-[-48px] bg-white/20' : 'bottom-0 bg-gradient-to-b from-white/20 to-transparent'}`} />
         </div>
 
         {/* Card content */}

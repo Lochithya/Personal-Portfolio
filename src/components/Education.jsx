@@ -68,7 +68,7 @@ const Education = () => {
                         </h4>
 
                         {/* Divider */}
-                        <div className={`h-0.5 bg-gradient-to-r from-[#22c55e]/0 via-[#22c55e] to-[#22c55e]/0 rounded-full mb-3 ${isLeft ? 'md:ml-auto w-8' : ''}`} />
+                        <div className={`h-0.5 bg-gradient-to-r from-[#22c55e]/0 via-[#22c55e] to-[#22c55e]/0 rounded-full mb-3`} />
 
                         {/* Details */}
                         <div className="space-y-2 mb-3">
