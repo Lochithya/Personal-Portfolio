@@ -57,11 +57,10 @@ const ArticleCard = ({ article }) => {
 const Articles = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const maxIndex = Math.max(0, Math.ceil(articles.length / CARDS_PER_PAGE) - 1);
+  const maxIndex = Math.max(0, articles.length - CARDS_PER_PAGE);
 
   const visibleArticles = useMemo(() => {
-    const start = currentIndex * CARDS_PER_PAGE;
-    return articles.slice(start, start + CARDS_PER_PAGE);
+    return articles.slice(currentIndex, currentIndex + CARDS_PER_PAGE);
   }, [currentIndex]);
 
   const goPrev = () => {
