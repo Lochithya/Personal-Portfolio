@@ -20,7 +20,7 @@ const filters = [
   { id: 'All', label: 'All', icon: FaTh },
   { id: 'Web Development', label: 'Web Apps', icon: FaGlobe },
   { id: 'UI/UX Design', label: 'UI/UX', icon: FaLayerGroup },
-  { id: 'Other', label: 'Full Stack', icon: FaCode },
+  { id: 'Other', label: 'Other', icon: FaCode },
 ];
 
 const categoryBadge = {

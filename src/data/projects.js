@@ -31,7 +31,7 @@ export const projects = [
     description: "A personal portfolio to showcase software projects, UI/UX designs, technical articles, GitHub repositories, and academic work.",
     tech: ["React", "JavaScript", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/Lochithya",
-    demo: "#",
+    demo: "",
     image: "/images/projects/portfolio.png",
     highlight: "React | Framer Motion"
   },
@@ -58,5 +58,17 @@ export const projects = [
     demo: "",
     image: "/images/projects/LoRanOS.png",
     highlight: "16-bit kernel | Assembly"
-  }
+  } , 
+  {
+    id: 6,
+    title: "ProjectSphere",
+    category: "Web Development",
+    period: "June 2026 - July 2026",
+    description: "ProjectSphere is a MERN stack web application designed to showcase undergraduate student projects. The system allows students to submit their individual project details, lecturers/admins to manage project records, and recruiters to browse approved projects after logging in.",
+    tech: ["MongoDB", "Express.js", "React", "Node.js","Google Cloud Platform"],
+    github: "https://github.com/Lochithya/ProjectSphere-frontend",
+    demo: "",
+    image: "/images/projects/ProjectSphere.png",
+    highlight: "MERN stack | team lead of 6"
+  },
 ];
