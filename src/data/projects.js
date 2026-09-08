@@ -13,27 +13,27 @@ export const projects = [
   },
   {
     id: 2,
-    title: "ReserveX",
+    title: "ReserveX-Secure",
     category: "Web Development",
-    period: "Feb 2026 - Mar 2026",
-    description: "Stall Reservation Management System. Team lead of 6 members. Separate backend and frontend modules with JWT-based authentication and SMTP email functionality.",
-    tech: ["Java 17", "Spring Boot", "MySQL", "React", "Vite", "Tailwind"],
-    github: "https://github.com/Lochithya/ReserveX",
+    period: "Aug 2026 - Sep 2026",
+    description: "Reservex-Secure is a multi-exhibition reservation and venue-management platform. It helps event organizers configure exhibitions, venues, and stall layouts, while giving vendors a dedicated portal to discover exhibitions, choose available stalls, manage reservations, and maintain their profiles.",
+    tech: ["Java 17", "Spring Boot","OAuth 2.0","JWT", "MySQL", "React", "Vite", "Tailwind"],
+    github: "https://github.com/Lochithya/ReserveX-Secure",
     demo: "",
-    image: "/images/projects/ReserveX.png",
-    highlight: "JWT auth | team lead of 6"
+    image: "/images/projects/ReserveX-Secure.png",
+    highlight: "OAuth 2.0 | Multi-exhibition"
   },
   {
     id: 3,
-    title: "Personal Portfolio",
+    title: "ProjectSphere",
     category: "Web Development",
-    period: "Apr 2026 - May 2026",
-    description: "A personal portfolio to showcase software projects, UI/UX designs, technical articles, GitHub repositories, and academic work.",
-    tech: ["React", "JavaScript", "Tailwind CSS", "Framer Motion"],
-    github: "https://github.com/Lochithya",
+    period: "June 2026 - July 2026",
+    description: "ProjectSphere is a MERN stack web application designed to showcase undergraduate student projects. The system allows students to submit their individual project details, lecturers/admins to manage project records, and recruiters to browse approved projects after logging in.",
+    tech: ["MongoDB", "Express.js", "React", "Node.js","Google Cloud Platform"],
+    github: "https://github.com/Lochithya/ProjectSphere-frontend",
     demo: "",
-    image: "/images/projects/portfolio.png",
-    highlight: "React | Framer Motion"
+    image: "/images/projects/ProjectSphere.png",
+    highlight: "MERN stack | team lead of 6"
   },
   {
     id: 4,
@@ -49,6 +49,30 @@ export const projects = [
   },
   {
     id: 5,
+    title: "ReserveX",
+    category: "Web Development",
+    period: "Feb 2026 - Mar 2026",
+    description: "Stall Reservation Management System. Team lead of 6 members. Separate backend and frontend modules with JWT-based authentication and SMTP email functionality.",
+    tech: ["Java 17", "Spring Boot", "MySQL", "React", "Vite", "Tailwind"],
+    github: "https://github.com/Lochithya/ReserveX",
+    demo: "",
+    image: "/images/projects/ReserveX.png",
+    highlight: "JWT auth | team lead of 6"
+  },
+  {
+    id: 6,
+    title: "Personal Portfolio",
+    category: "Web Development",
+    period: "Apr 2026 - May 2026",
+    description: "A personal portfolio to showcase software projects, UI/UX designs, technical articles, GitHub repositories, and academic work.",
+    tech: ["React", "JavaScript", "Tailwind CSS", "Framer Motion"],
+    github: "https://github.com/Lochithya",
+    demo: "",
+    image: "/images/projects/portfolio.png",
+    highlight: "React | Framer Motion"
+  },
+  {
+    id: 7,
     title: "LoRanOS",
     category: "Other",
     period: "2024",
@@ -59,16 +83,5 @@ export const projects = [
     image: "/images/projects/LoRanOS.png",
     highlight: "16-bit kernel | Assembly"
   } , 
-  {
-    id: 6,
-    title: "ProjectSphere",
-    category: "Web Development",
-    period: "June 2026 - July 2026",
-    description: "ProjectSphere is a MERN stack web application designed to showcase undergraduate student projects. The system allows students to submit their individual project details, lecturers/admins to manage project records, and recruiters to browse approved projects after logging in.",
-    tech: ["MongoDB", "Express.js", "React", "Node.js","Google Cloud Platform"],
-    github: "https://github.com/Lochithya/ProjectSphere-frontend",
-    demo: "",
-    image: "/images/projects/ProjectSphere.png",
-    highlight: "MERN stack | team lead of 6"
-  },
+  
 ];
