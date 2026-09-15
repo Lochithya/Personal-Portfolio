@@ -34,7 +34,7 @@ const ProjectCard = ({ project }) => {
   const imageSrc = project.image;
 
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0c0c0c]/90 shadow-[0_12px_40px_rgba(0,0,0,0.45)] backdrop-blur-sm">
+    <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200/70 dark:border-white/[0.08] bg-white/80 dark:bg-[#0c0c0c]/90 shadow-[0_4px_24px_rgba(0,0,0,0.08)] dark:shadow-[0_12px_40px_rgba(0,0,0,0.45)] backdrop-blur-sm">
       <div className="relative h-52 overflow-hidden bg-[#111] sm:h-56">
         {!imgError && imageSrc ? (
           <img
@@ -44,12 +44,12 @@ const ProjectCard = ({ project }) => {
             onError={() => setImgError(true)}
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#1a1a2e] via-[#0f0f14] to-[#0a0a0a]">
-            <span className="px-4 text-center font-heading text-sm text-gray-500">{project.title}</span>
+          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-gray-100 dark:from-[#1a1a2e] via-gray-50 dark:via-[#0f0f14] to-white dark:to-[#0a0a0a]">
+            <span className="px-4 text-center font-heading text-sm text-gray-400 dark:text-gray-500">{project.title}</span>
           </div>
         )}
 
-        <span className="absolute left-3 top-3 rounded-full border border-white/15 bg-black/70 px-4 py-1.5 text-xs font-medium text-gray-200 backdrop-blur-sm">
+        <span className="absolute left-3 top-3 rounded-full border border-gray-200/60 dark:border-white/15 bg-white/80 dark:bg-black/70 px-4 py-1.5 text-xs font-medium text-gray-600 dark:text-gray-200 backdrop-blur-sm">
           {categoryBadge[project.category] || project.category}
         </span>
 
@@ -63,7 +63,7 @@ const ProjectCard = ({ project }) => {
                 e.preventDefault();
               }
             }}
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-black/75 text-gray-200 transition-colors hover:border-[#22c55e]/40 hover:text-[#4ade80]"
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200/60 dark:border-white/10 bg-white/75 dark:bg-black/75 text-gray-600 dark:text-gray-200 transition-colors hover:border-[#22c55e]/40 hover:text-[#4ade80]"
             aria-label={`${project.title} live demo`}
           >
             <FaExternalLinkAlt className="text-sm" />
@@ -72,7 +72,7 @@ const ProjectCard = ({ project }) => {
             href={project.github}
             target="_blank"
             rel="noreferrer"
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-black/75 text-gray-200 transition-colors hover:border-[#22c55e]/40 hover:text-[#4ade80]"
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200/60 dark:border-white/10 bg-white/75 dark:bg-black/75 text-gray-600 dark:text-gray-200 transition-colors hover:border-[#22c55e]/40 hover:text-[#4ade80]"
             aria-label={`${project.title} GitHub`}
           >
             <FaGithub className="text-sm" />
@@ -81,8 +81,8 @@ const ProjectCard = ({ project }) => {
       </div>
 
       <div className="flex flex-1 flex-col p-5 md:p-6">
-        <h3 className="mb-2 font-heading text-lg font-bold text-white md:text-xl">{project.title}</h3>
-        <p className="mb-4 line-clamp-3 flex-1 text-sm leading-relaxed text-gray-400">
+        <h3 className="mb-2 font-heading text-lg font-bold text-gray-900 dark:text-white md:text-xl">{project.title}</h3>
+        <p className="mb-4 line-clamp-3 flex-1 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
           {project.description}
         </p>
 
@@ -90,7 +90,7 @@ const ProjectCard = ({ project }) => {
           {project.tech.slice(0, 4).map((tech) => (
             <span
               key={tech}
-              className="rounded-full border border-[#22c55e]/35 bg-[#22c55e]/5 px-2.5 py-0.5 text-[11px] font-medium text-gray-200"
+              className="rounded-full border border-[#22c55e]/35 bg-[#22c55e]/5 px-2.5 py-0.5 text-[11px] font-medium text-gray-700 dark:text-gray-200"
             >
               {tech}
             </span>
@@ -162,10 +162,10 @@ const Projects = () => {
                 className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-300 ${
                   active
                     ? 'bg-[#22c55e] text-black shadow-[0_0_28px_rgba(34,197,94,0.45)]'
-                    : 'border border-white/10 bg-[#141414] text-gray-300 hover:border-white/20 hover:text-white'
+                    : 'border border-gray-200/70 dark:border-white/10 bg-gray-50/80 dark:bg-[#141414] text-gray-600 dark:text-gray-300 hover:border-[#22c55e]/30 dark:hover:border-white/20 hover:text-gray-900 dark:hover:text-white'
                 }`}
               >
-                <Icon className={`text-sm ${active ? 'text-black' : 'text-gray-400'}`} />
+                <Icon className={`text-sm ${active ? 'text-black' : 'text-gray-500 dark:text-gray-400'}`} />
                 {label}
               </button>
             );
@@ -181,7 +181,7 @@ const Projects = () => {
               type="button"
               onClick={goPrev}
               disabled={currentIndex === 0}
-              className="flex-shrink-0 flex h-11 w-11 md:h-12 md:w-12 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white backdrop-blur-md transition-all hover:border-[#22c55e] hover:bg-[#22c55e]/20 disabled:pointer-events-none disabled:opacity-30"
+              className="flex-shrink-0 flex h-11 w-11 md:h-12 md:w-12 items-center justify-center rounded-full border border-gray-200/70 dark:border-white/10 bg-white/80 dark:bg-black/60 text-gray-600 dark:text-white backdrop-blur-md transition-all hover:border-[#22c55e] hover:bg-[#22c55e]/20 hover:text-[#22c55e] dark:hover:text-white disabled:pointer-events-none disabled:opacity-30"
               aria-label="Previous projects"
             >
               <FaChevronLeft />
@@ -213,7 +213,7 @@ const Projects = () => {
               type="button"
               onClick={goNext}
               disabled={currentIndex >= maxIndex}
-              className="flex-shrink-0 flex h-11 w-11 md:h-12 md:w-12 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white backdrop-blur-md transition-all hover:border-[#22c55e] hover:bg-[#22c55e]/20 disabled:pointer-events-none disabled:opacity-30"
+              className="flex-shrink-0 flex h-11 w-11 md:h-12 md:w-12 items-center justify-center rounded-full border border-gray-200/70 dark:border-white/10 bg-white/80 dark:bg-black/60 text-gray-600 dark:text-white backdrop-blur-md transition-all hover:border-[#22c55e] hover:bg-[#22c55e]/20 hover:text-[#22c55e] dark:hover:text-white disabled:pointer-events-none disabled:opacity-30"
               aria-label="Next projects"
             >
               <FaChevronRight />
@@ -249,19 +249,19 @@ const Projects = () => {
                   type="button"
                   onClick={goPrev}
                   disabled={currentIndex === 0}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white backdrop-blur-md transition-all hover:border-[#22c55e] hover:bg-[#22c55e]/20 disabled:pointer-events-none disabled:opacity-30"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200/70 dark:border-white/10 bg-white/80 dark:bg-black/60 text-gray-600 dark:text-white backdrop-blur-md transition-all hover:border-[#22c55e] hover:bg-[#22c55e]/20 hover:text-[#22c55e] dark:hover:text-white disabled:pointer-events-none disabled:opacity-30"
                   aria-label="Previous projects"
                 >
                   <FaChevronLeft />
                 </button>
-                <span className="text-sm text-gray-400">
+                <span className="text-sm text-gray-500 dark:text-gray-400">
                   {currentIndex + 1} / {maxIndex + 1}
                 </span>
                 <button
                   type="button"
                   onClick={goNext}
                   disabled={currentIndex >= maxIndex}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white backdrop-blur-md transition-all hover:border-[#22c55e] hover:bg-[#22c55e]/20 disabled:pointer-events-none disabled:opacity-30"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200/70 dark:border-white/10 bg-white/80 dark:bg-black/60 text-gray-600 dark:text-white backdrop-blur-md transition-all hover:border-[#22c55e] hover:bg-[#22c55e]/20 hover:text-[#22c55e] dark:hover:text-white disabled:pointer-events-none disabled:opacity-30"
                   aria-label="Next projects"
                 >
                   <FaChevronRight />

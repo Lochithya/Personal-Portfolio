@@ -68,7 +68,7 @@ const TimelineCard = ({ exp, index }) => {
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true, margin: "50px" }}
             transition={{ duration: 0.4, delay: index * 0.15 + 0.1 }}
-            className={`w-12 h-12 rounded-full bg-gradient-to-br ${cfg.color} ${cfg.glow} flex items-center justify-center z-10 flex-shrink-0 ring-4 ring-[#0c0c0c]`}
+            className={`w-12 h-12 rounded-full bg-gradient-to-br ${cfg.color} ${cfg.glow} flex items-center justify-center z-10 flex-shrink-0 ring-4 ring-gray-100 dark:ring-[#0c0c0c]`}
           >
             <Icon className="text-white text-lg" />
           </motion.div>
@@ -79,7 +79,7 @@ const TimelineCard = ({ exp, index }) => {
 
         {/* Card content */}
         <div className="flex-1 group md:pt-1">
-          <div className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.015] backdrop-blur-[32px] shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.05)] transition-all duration-500 hover:border-white/[0.12] hover:bg-white/[0.025] hover:shadow-[0_12px_40px_rgba(0,0,0,0.25),inset_0_1px_0_rgba(255,255,255,0.06)] hover:-translate-y-1 p-6 md:p-7">
+          <div className="relative overflow-hidden rounded-2xl border border-gray-200/70 dark:border-white/[0.08] bg-white/70 dark:bg-white/[0.015] backdrop-blur-[32px] shadow-[0_4px_24px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.05)] transition-all duration-500 hover:border-[#22c55e]/25 dark:hover:border-white/[0.12] hover:bg-white/90 dark:hover:bg-white/[0.025] hover:shadow-[0_8px_24px_rgba(0,0,0,0.10)] dark:hover:shadow-[0_12px_40px_rgba(0,0,0,0.25),inset_0_1px_0_rgba(255,255,255,0.06)] hover:-translate-y-1 p-6 md:p-7">
             
             {/* Top accent gradient bar */}
             <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${cfg.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
@@ -97,7 +97,7 @@ const TimelineCard = ({ exp, index }) => {
                       <FaStar className="text-[8px]" />
                       {cfg.label}
                     </span>
-                    <h3 className="text-xl md:text-2xl font-bold text-white leading-tight">{exp.title}</h3>
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white leading-tight">{exp.title}</h3>
                   </div>
                   
                   {/* Time badge */}
@@ -106,7 +106,7 @@ const TimelineCard = ({ exp, index }) => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "50px" }}
                     transition={{ duration: 0.5, delay: index * 0.15 + 0.2 }}
-                    className="flex-shrink-0 inline-flex items-center gap-2 text-xs font-medium text-gray-300 bg-white/[0.06] border border-white/[0.12] rounded-full px-3.5 py-1.5 backdrop-blur-sm"
+                    className="flex-shrink-0 inline-flex items-center gap-2 text-xs font-medium text-gray-500 dark:text-gray-300 bg-gray-100/80 dark:bg-white/[0.06] border border-gray-200/70 dark:border-white/[0.12] rounded-full px-3.5 py-1.5 backdrop-blur-sm"
                   >
                     <FaClock className="text-[#4ade80] text-xs" />
                     {exp.period}
@@ -120,7 +120,7 @@ const TimelineCard = ({ exp, index }) => {
                     <p className="text-sm font-semibold text-[#4ade80]">{exp.company}</p>
                   </div>
                   <div className="hidden sm:block w-1 h-1 rounded-full bg-white/20" />
-                  <span className="text-xs text-gray-400 font-medium">{exp.duration}</span>
+                  <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">{exp.duration}</span>
                 </div>
               </div>
 
@@ -128,7 +128,7 @@ const TimelineCard = ({ exp, index }) => {
               <div className="pt-2 space-y-2">
                 <div className="flex items-start gap-2">
                   <FaCheckCircle className="text-[#22c55e]/60 text-xs mt-1 flex-shrink-0" />
-                  <p className="text-sm leading-relaxed text-gray-300">{exp.description}</p>
+                  <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">{exp.description}</p>
                 </div>
               </div>
 
@@ -187,7 +187,7 @@ const Experience = () => {
           className="mt-20 max-w-4xl mx-auto"
         >
           <div className="mb-8">
-            <h4 className="text-center text-sm font-semibold text-gray-400 uppercase tracking-widest">Quick Stats</h4>
+            <h4 className="text-center text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Quick Stats</h4>
           </div>
           
           <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6">
@@ -205,7 +205,7 @@ const Experience = () => {
                 whileHover={{ translateY: -8, transition: { duration: 0.3 } }}
                 className="group relative"
               >
-                <div className="relative h-full overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.015] backdrop-blur-[32px] shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.05)] p-4 sm:p-6 md:p-7 transition-all duration-500 hover:border-white/[0.12] hover:bg-white/[0.025] hover:shadow-[0_12px_40px_rgba(0,0,0,0.25),inset_0_1px_0_rgba(255,255,255,0.06)]">
+                <div className="relative h-full overflow-hidden rounded-2xl border border-gray-200/70 dark:border-white/[0.08] bg-white/70 dark:bg-white/[0.015] backdrop-blur-[32px] shadow-[0_4px_24px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.05)] p-4 sm:p-6 md:p-7 transition-all duration-500 hover:border-[#22c55e]/25 dark:hover:border-white/[0.12] hover:bg-white/90 dark:hover:bg-white/[0.025] hover:shadow-[0_8px_24px_rgba(0,0,0,0.10)] dark:hover:shadow-[0_12px_40px_rgba(0,0,0,0.25),inset_0_1px_0_rgba(255,255,255,0.06)]">
                   
                   {/* Top accent bar */}
                   <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
@@ -233,11 +233,11 @@ const Experience = () => {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true, margin: "50px" }}
                       transition={{ duration: 0.5, delay: i * 0.15 + 0.05, ease: "easeOut" }}
-                      className="block text-2xl sm:text-3xl md:text-4xl font-extrabold text-white font-heading"
+                      className="block text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white font-heading"
                     >
                       {value}
                     </motion.span>
-                    <p className="text-[10px] sm:text-xs md:text-sm text-gray-400 font-medium leading-snug">{label}</p>
+                    <p className="text-[10px] sm:text-xs md:text-sm text-gray-500 dark:text-gray-400 font-medium leading-snug">{label}</p>
                   </div>
 
                   {/* Background glow */}

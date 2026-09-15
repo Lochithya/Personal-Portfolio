@@ -37,8 +37,8 @@ const Hero = () => {
         <div className="absolute right-16 top-0 h-24 w-24 rounded-full bg-[#22c55e]/20 blur-[40px] hidden lg:block" />
         
         {/* Subtle Glows */}
-        <div className="absolute -left-24 top-[-5%] h-[min(70vh,520px)] w-[min(70vh,520px)] rounded-full bg-[#061208]/50 blur-[80px]" />
-        <div className="absolute top-[20%] right-[-10%] w-[50%] h-[60%] lg:w-[40%] rounded-full bg-[#0d2f13]/16 blur-[120px]" />
+        <div className="absolute -left-24 top-[-5%] h-[min(70vh,520px)] w-[min(70vh,520px)] rounded-full bg-[#061208]/50 blur-[80px] hidden dark:block" />
+        <div className="absolute top-[20%] right-[-10%] w-[50%] h-[60%] lg:w-[40%] rounded-full bg-[#0d2f13]/16 blur-[120px] hidden dark:block" />
       </div>
 
       <div className="relative w-full max-w-[1360px] mx-auto px-6 md:px-12 lg:pl-4 xl:pl-6">
@@ -57,7 +57,7 @@ const Hero = () => {
           {/* Badge */}
           <motion.div
             variants={itemVariants}
-            className="relative z-10 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#22c55e]/25 bg-[#0a0a0a]/90 text-gray-300 text-xs md:text-sm font-medium mb-7 w-fit shadow-[0_0_20px_rgba(0,0,0,0.4)]"
+            className="relative z-10 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#22c55e]/25 bg-white/80 dark:bg-[#0a0a0a]/90 text-gray-600 dark:text-gray-300 text-xs md:text-sm font-medium mb-7 w-fit shadow-[0_0_20px_rgba(0,0,0,0.08)] dark:shadow-[0_0_20px_rgba(0,0,0,0.4)]"
           >
             <FaStar className="text-[#4ade80] shrink-0" size={12} />
             <span>Full Stack Developer <span className="mx-2 text-[#4ade80]">|</span> Project Management Enthusiast</span>
@@ -66,9 +66,9 @@ const Hero = () => {
           {/* Title */}
           <motion.h1
             variants={itemVariants}
-            className="relative z-10 text-[1.75rem] sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] font-heading font-bold mb-6 text-white leading-[1.12] tracking-tight"
+            className="relative z-10 text-[1.75rem] sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] font-heading font-bold mb-6 text-gray-900 dark:text-white leading-[1.12] tracking-tight"
           >
-            <span style={{fontFamily:'Inter'}} className="text-[1.75rem] sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem]">Lochithya</span>
+            <span style={{fontFamily:'Inter'}} className="text-[1.75rem] sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] text-gray-900 dark:text-white">Lochithya</span>
             <br />
             <span className="text-[#349E5D] text-[2.25rem] sm:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem]" style={{fontFamily:'Inter'}}>Hettiarachchi</span>
           </motion.h1>
@@ -76,7 +76,7 @@ const Hero = () => {
           {/* Bio */}
           <motion.p
             variants={itemVariants}
-            className="relative z-10 text-gray-400 max-w-lg mb-9 text-[0.9375rem] md:text-base leading-relaxed"
+            className="relative z-10 text-gray-500 dark:text-gray-400 max-w-lg mb-9 text-[0.9375rem] md:text-base leading-relaxed"
           >
             Building modern, scalable web applications with React, JavaScript, and cutting-edge technologies. Transforming ideas into exceptional digital experiences.
           </motion.p>
@@ -87,14 +87,14 @@ const Hero = () => {
               to="contact"
               smooth={true}
               duration={500}
-              className="inline-flex items-center justify-center px-7 sm:px-9 py-3 sm:py-3.5 rounded-full bg-white text-black font-semibold text-sm tracking-wide hover:bg-gray-100 hover:shadow-[0_0_28px_rgba(255,255,255,0.25)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 cursor-pointer"
+              className="inline-flex items-center justify-center px-7 sm:px-9 py-3 sm:py-3.5 rounded-full bg-white text-gray-900 dark:text-black font-semibold text-sm tracking-wide hover:bg-gray-50 dark:hover:bg-gray-100 hover:text-[#22c55e] dark:hover:text-black hover:shadow-[0_8px_25px_rgba(34,197,94,0.25)] dark:hover:shadow-[0_0_28px_rgba(255,255,255,0.25)] border border-gray-100 dark:border-none hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 cursor-pointer"
             >
               Get in Touch
             </Link>
             <a
               href="/resume/Lochithya_Hettiarachchi_Resume.pdf"
               download="Lochithya_Hettiarachchi_Resume.pdf"
-              className="inline-flex items-center justify-center gap-2 px-7 sm:px-9 py-3 sm:py-3.5 rounded-full bg-white/10 backdrop-blur-xl border border-white/40 text-white font-semibold text-sm tracking-wide hover:bg-white/20 hover:border-white/50 hover:shadow-[0_8px_32px_0_rgba(255,255,255,0.28)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 px-7 sm:px-9 py-3 sm:py-3.5 rounded-full bg-gray-50/80 dark:bg-white/10 backdrop-blur-xl border border-gray-200/80 dark:border-white/40 text-gray-600 dark:text-white font-semibold text-sm tracking-wide hover:bg-white dark:hover:bg-white/20 hover:border-[#22c55e]/40 dark:hover:border-white/50 hover:text-[#22c55e] dark:hover:text-white hover:shadow-[0_8px_25px_rgba(34,197,94,0.12)] dark:hover:shadow-[0_8px_32px_0_rgba(255,255,255,0.28)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -106,7 +106,7 @@ const Hero = () => {
           {/* Stats — Projects & Technologies only */}
           <motion.div
             variants={itemVariants}
-            className="relative z-10 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-4 sm:gap-6 md:gap-8 border-t border-white/[0.06] pt-8"
+            className="relative z-10 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-4 sm:gap-6 md:gap-8 border-t border-gray-200/60 dark:border-white/[0.06] pt-8"
           >
             {heroStats.map((stat, index) => (
               <div
@@ -116,7 +116,7 @@ const Hero = () => {
                 <h3 className="text-2xl sm:text-3xl md:text-[2rem] font-bold text-[#4ade80] mb-1.5 leading-none tabular-nums">
                   {stat.value}
                 </h3>
-                <p className="text-[9px] sm:text-[10px] md:text-[11px] text-gray-500 uppercase tracking-[0.14em] leading-snug font-medium">
+                <p className="text-[9px] sm:text-[10px] md:text-[11px] text-gray-500 dark:text-gray-500 uppercase tracking-[0.14em] leading-snug font-medium">
                   {stat.label}
                   {stat.sub && (
                     <>
@@ -153,7 +153,7 @@ const Hero = () => {
                 <div className="hero-profile-border-beam hero-profile-border-beam--opposite" />
               </div>
 
-              <div className="relative z-10 overflow-hidden rounded-[1.35rem] bg-[#030303]">
+              <div className="relative z-10 overflow-hidden rounded-[1.35rem] bg-gray-100 dark:bg-[#030303]">
                 <div className="relative aspect-[4/5] w-full max-h-[calc(100%-20px)]">
                   <img
                     src="/images/hero/profile.jpeg"

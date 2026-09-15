@@ -29,8 +29,11 @@
     <!-- Force Dark Mode as Default -->
     <script>
       try {
-        // Always force dark mode regardless of browser preference or localStorage
-        document.documentElement.classList.add('dark')
+        if (localStorage.getItem('theme') === 'light' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+          document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+        }
       } catch (_) {}
     </script>
   </head>

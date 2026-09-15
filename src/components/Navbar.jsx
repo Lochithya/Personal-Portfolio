@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { personalInfo } from '../data/personalInfo';
 import { FaSun, FaMoon } from 'react-icons/fa';
+
+const SCROLL_DURATION = 200; // ms — must match duration prop on <Link>
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -10,22 +12,32 @@ const Navbar = () => {
   const [isDark, setIsDark] = useState(true);
   const [activeSection, setActiveSection] = useState('about');
 
-  // Initialize theme - default to dark mode
+  // While this ref is true, the scroll handler won't touch activeSection
+  // so intermediate sections are never highlighted during programmatic scroll
+  const isProgrammaticScroll = useRef(false);
+  const programmaticScrollTimer = useRef(null);
+  const scrollEndTimer = useRef(null);
+
+  const navLinks = [
+    { name: 'About', to: 'about' },
+    { name: 'Education', to: 'education' },
+    { name: 'Skills', to: 'skills' },
+    { name: 'Projects', to: 'projects' },
+    { name: 'Articles', to: 'articles' },
+    { name: 'Experience', to: 'experience' },
+    { name: 'Contact', to: 'contact' },
+  ];
+
+  // Initialize theme
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
-    
-    // Only switch to light mode if explicitly saved in localStorage
     if (savedTheme === 'light') {
       setIsDark(false);
       document.documentElement.classList.remove('dark');
     } else {
-      // Default to dark mode
       setIsDark(true);
       document.documentElement.classList.add('dark');
-      // Set dark as default in localStorage if not already set
-      if (!savedTheme) {
-        localStorage.setItem('theme', 'dark');
-      }
+      if (!savedTheme) localStorage.setItem('theme', 'dark');
     }
   }, []);
 
@@ -41,39 +53,58 @@ const Navbar = () => {
     }
   };
 
+  // Called when a nav link is clicked.
+  // - Immediately sets the destination active section (200ms transition)
+  // - Lock out scroll-based updates for the duration of the programmatic scroll
+  const handleNavClick = (sectionId) => {
+    setActiveSection(sectionId);
+    isProgrammaticScroll.current = true;
+
+    if (programmaticScrollTimer.current) clearTimeout(programmaticScrollTimer.current);
+    // Unlock slightly after scroll completes so manual scroll detection resumes
+    programmaticScrollTimer.current = setTimeout(() => {
+      isProgrammaticScroll.current = false;
+    }, SCROLL_DURATION + 100);
+  };
+
+  // Scroll handler — only updates active section when the user is
+  // manually scrolling (not during a programmatic nav-click scroll)
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-      
-      // Update active section based on scroll position
-      const sections = navLinks.map(link => link.to);
-      const scrollPosition = window.scrollY + 100;
-      
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetHeight = element.offsetHeight;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
-            break;
+    const getActiveSection = () => {
+      const scrollPosition = window.scrollY + 120;
+      for (const link of navLinks) {
+        const el = document.getElementById(link.to);
+        if (el) {
+          const top = el.offsetTop;
+          const bottom = top + el.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < bottom) {
+            return link.to;
           }
         }
       }
+      return null;
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
-  const navLinks = [
-    { name: 'About', to: 'about' },
-    { name: 'Education', to: 'education' },
-    { name: 'Skills', to: 'skills' },
-    { name: 'Projects', to: 'projects' },
-    { name: 'Articles', to: 'articles' },
-    { name: 'Experience', to: 'experience' },
-    { name: 'Contact', to: 'contact' },
-  ];
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+
+      // Skip section detection while a nav-click scroll is in progress
+      if (isProgrammaticScroll.current) return;
+
+      if (scrollEndTimer.current) clearTimeout(scrollEndTimer.current);
+      scrollEndTimer.current = setTimeout(() => {
+        const section = getActiveSection();
+        if (section) setActiveSection(section);
+      }, 50);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (scrollEndTimer.current) clearTimeout(scrollEndTimer.current);
+      if (programmaticScrollTimer.current) clearTimeout(programmaticScrollTimer.current);
+    };
+  }, []);
 
   const linkLabelClass = (isActive) =>
     isActive
@@ -87,7 +118,7 @@ const Navbar = () => {
       transition={{ duration: 0.22 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300`}
     >
-      {/* animated background overlay with glassmorphism effect */}
+      {/* Glassmorphism background — fades in on scroll */}
       <motion.div
         aria-hidden
         initial={false}
@@ -95,15 +126,16 @@ const Navbar = () => {
         transition={{ duration: 0.22 }}
         className="absolute inset-0 -z-10 bg-white/10 dark:bg-black/20 backdrop-blur-xl border-b border-white/20 dark:border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)]"
       />
+
       <div className="container mx-auto px-6 md:px-12 relative">
         <div className="flex items-center justify-between h-14">
-          
+
           {/* Left: Logo */}
           <div className="flex-shrink-0">
-            <Link 
-              to="home" 
-              smooth={true} 
-              duration={300} 
+            <Link
+              to="home"
+              smooth={true}
+              duration={300}
               className="text-xl md:text-2xl font-heading font-bold flex items-center gap-2 cursor-pointer text-gray-900 dark:text-white"
             >
               <span className="text-[#22c55e]">&lt;&gt;</span>
@@ -113,63 +145,79 @@ const Navbar = () => {
 
           {/* Center: Desktop Nav */}
           <nav className="hidden lg:flex items-center space-x-1 absolute left-1/2 transform -translate-x-1/2">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.to}
-              smooth={true}
-              duration={300}
-              spy={true}
-              onSetActive={() => setActiveSection(link.to)}
-              className="relative px-4 py-2 text-sm font-medium cursor-pointer transition-all duration-300 group"
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.to}
+                smooth={true}
+                duration={SCROLL_DURATION}
+                offset={-80}
+                onClick={() => handleNavClick(link.to)}
+                className="relative px-4 py-2 text-sm font-medium cursor-pointer transition-all duration-300 group"
+              >
+                <span className={linkLabelClass(activeSection === link.to)}>{link.name}</span>
+                {activeSection === link.to && (
+                  <motion.div
+                    layoutId="activeIndicator"
+                    className="absolute -bottom-1 left-0 right-0 h-[2px] rounded-full bg-gradient-to-r from-[#22c55e] via-[#bbf7d0] to-[#4ade80] shadow-[0_0_8px_rgba(74,222,128,0.6)]"
+                    transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                  />
+                )}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Right: Actions */}
+          <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
+            <button
+              onClick={toggleTheme}
+              aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+              className="theme-toggle-btn text-[#22c55e]"
             >
-              <span className={linkLabelClass(activeSection === link.to)}>{link.name}</span>
-              {activeSection === link.to && (
-                <motion.div
-                  layoutId="activeIndicator"
-                  className="absolute -bottom-1 left-0 right-0 h-[2px] rounded-full bg-gradient-to-r from-[#22c55e] via-[#bbf7d0] to-[#4ade80] shadow-[0_0_8px_rgba(74,222,128,0.6)]"
-                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                />
-              )}
+              {isDark ? <FaSun size={15} /> : <FaMoon size={15} />}
+            </button>
+            <Link
+              to="contact"
+              smooth={true}
+              duration={SCROLL_DURATION}
+              offset={-80}
+              onClick={() => handleNavClick('contact')}
+              className="px-8 py-3 rounded-full bg-white dark:bg-white text-black font-semibold text-sm border border-gray-300 dark:border-transparent shadow-sm dark:shadow-none cursor-pointer transition-all duration-300 hover:shadow-md dark:hover:shadow-white/20 hover:scale-105 active:scale-95"
+            >
+              Hire Me
             </Link>
-          ))}
-        </nav>
+          </div>
 
-        {/* Right: Actions */}
-        <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
-          <Link
-            to="contact"
-            smooth={true}
-            duration={300}
-            className="px-8 py-3 rounded-full bg-white text-black font-semibold text-sm cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-white/20 hover:scale-105 active:scale-95"
-          >
-            Hire Me
-          </Link>
-        </div>
-
-        {/* Mobile Menu Controls */}
-        <div className="lg:hidden flex items-center gap-3 flex-shrink-0">
-          <button
-            className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white focus:outline-none"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {isOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
-        </div>
+          {/* Mobile Menu Controls */}
+          <div className="lg:hidden flex items-center gap-3 flex-shrink-0">
+            <button
+              onClick={toggleTheme}
+              aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+              className="theme-toggle-btn text-[#22c55e]"
+            >
+              {isDark ? <FaSun size={14} /> : <FaMoon size={14} />}
+            </button>
+            <button
+              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white focus:outline-none"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {isOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Mobile Nav Drawer */}
-      <motion.div 
+      <motion.div
         initial={false}
         animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
         className="lg:hidden overflow-hidden glass mt-4 mx-4 rounded-xl"
       >
         <div className="px-6 py-4 flex flex-col space-y-2">
@@ -178,28 +226,28 @@ const Navbar = () => {
               key={link.name}
               to={link.to}
               smooth={true}
-              duration={300}
-              spy={true}
-              onSetActive={() => setActiveSection(link.to)}
+              duration={SCROLL_DURATION}
+              offset={-80}
+              onClick={() => { handleNavClick(link.to); setIsOpen(false); }}
               className="relative px-4 py-3 text-sm font-medium cursor-pointer transition-all duration-300 rounded-lg group"
-              onClick={() => setIsOpen(false)}
             >
               <span className={linkLabelClass(activeSection === link.to)}>{link.name}</span>
               {activeSection === link.to && (
                 <motion.div
                   layoutId="mobileActiveIndicator"
                   className="absolute left-0 top-0 bottom-0 w-1 rounded-r-full bg-gradient-to-b from-[#22c55e] via-[#bbf7d0] to-[#4ade80] shadow-[0_0_8px_rgba(74,222,128,0.5)]"
-                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                 />
               )}
             </Link>
           ))}
-          <Link 
-            to="contact" 
-            smooth={true} 
-            duration={500}
+          <Link
+            to="contact"
+            smooth={true}
+            duration={SCROLL_DURATION}
+            offset={-80}
+            onClick={() => { handleNavClick('contact'); setIsOpen(false); }}
             className="px-6 py-3 rounded-lg bg-gradient-to-r from-[#22c55e] to-[#4ade80] text-black text-center transition-all duration-300 font-medium text-sm cursor-pointer hover:shadow-lg hover:shadow-[#22c55e]/30"
-            onClick={() => setIsOpen(false)}
           >
             Hire Me
           </Link>

@@ -28,13 +28,13 @@ const About = () => {
               className="flex flex-col justify-start text-left self-start"
             >
               {/* Heading starts at the very top to align horizontally with the right side */}
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white mb-6 leading-tight tracking-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-gray-900 dark:text-white mb-6 leading-tight tracking-tight">
                 Crafting <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-[#22c55e]">Experiences</span>
                 <br />
                 That Drive Value
               </h2>
               
-              <div className="space-y-4 text-gray-400 text-sm md:text-base leading-relaxed mb-10 text-left">
+              <div className="space-y-4 text-gray-600 dark:text-gray-400 text-sm md:text-base leading-relaxed mb-10 text-left">
                 <p>
                   I am a Software Engineering undergraduate at the University of Kelaniya, Faculty of Science, 
                   specializing in Net-Centric Web Application Development, Data Science, and Business Engineering.
@@ -51,11 +51,11 @@ const About = () => {
               </div>
 
               {/* Stats at bottom of left section */}
-              <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-x-6 sm:gap-x-10 gap-y-6 pt-6 border-t border-gray-800/40">
+              <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-x-6 sm:gap-x-10 gap-y-6 pt-6 border-t border-gray-200/60 dark:border-gray-800/40">
                 {personalInfo.stats.map((stat, index) => (
                   <div key={index} className="border-l-[3px] border-[#22c55e] pl-3 sm:pl-4 text-left">
-                    <h4 className="text-2xl sm:text-3xl font-extrabold text-white font-heading leading-none mb-1">{stat.value}</h4>
-                    <p className="text-[10px] sm:text-xs text-gray-500 font-medium tracking-wide">{stat.label}</p>
+                    <h4 className="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white font-heading leading-none mb-1">{stat.value}</h4>
+                    <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-500 font-medium tracking-wide">{stat.label}</p>
                   </div>
                 ))}
               </div>
@@ -84,14 +84,14 @@ const About = () => {
               {/* Expertise Card (Full Width) */}
               <div className="glass-about-card rounded-2xl p-6">
                 <div className="flex gap-4 items-start text-left">
-                  <div className="p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-500/25 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                  <div className="p-2.5 rounded-lg bg-[#22c55e]/15 dark:bg-emerald-950/40 border border-[#22c55e]/20 dark:border-emerald-500/25 text-[#15803d] dark:text-emerald-400 flex items-center justify-center flex-shrink-0">
                     <FaCode size={18} />
                   </div>
                   <div>
-                    <h4 className="font-card text-[1.125rem] font-semibold text-white mb-2 leading-snug">
+                    <h4 className="font-card text-[1.125rem] font-semibold text-gray-900 dark:text-white mb-2 leading-snug">
                       Expertise
                     </h4>
-                    <p className="font-sans text-[0.8125rem] font-normal text-gray-400/90 leading-[1.65]">
+                    <p className="font-sans text-[0.8125rem] font-normal text-gray-600 dark:text-gray-400/90 leading-[1.65]">
                       Specialized in building scalable web applications with modern technologies and best practices.
                     </p>
                   </div>
@@ -103,13 +103,13 @@ const About = () => {
                 {/* Clean Code */}
                 <div className="glass-about-card rounded-2xl p-5 flex flex-col justify-between min-h-[145px]">
                   <div>
-                    <div className="p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-500/25 text-emerald-400 flex items-center justify-center w-fit mb-3.5">
+                    <div className="p-2.5 rounded-lg bg-[#22c55e]/15 dark:bg-emerald-950/40 border border-[#22c55e]/20 dark:border-emerald-500/25 text-[#15803d] dark:text-emerald-400 flex items-center justify-center w-fit mb-3.5">
                       <FaMagic size={16} />
                     </div>
-                    <h4 className="font-card text-[0.9375rem] font-semibold text-white mb-1.5 leading-snug">
+                    <h4 className="font-card text-[0.9375rem] font-semibold text-gray-900 dark:text-white mb-1.5 leading-snug">
                       Clean Code
                     </h4>
-                    <p className="font-sans text-[0.75rem] font-normal text-gray-400/85 leading-[1.6]">
+                    <p className="font-sans text-[0.75rem] font-normal text-gray-600 dark:text-gray-400/85 leading-[1.6]">
                       Writing maintainable, well-documented code that scales.
                     </p>
                   </div>
@@ -118,13 +118,13 @@ const About = () => {
                 {/* Performance */}
                 <div className="glass-about-card rounded-2xl p-5 flex flex-col justify-between min-h-[145px]">
                   <div>
-                    <div className="p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-500/25 text-emerald-400 flex items-center justify-center w-fit mb-3.5">
+                    <div className="p-2.5 rounded-lg bg-[#22c55e]/15 dark:bg-emerald-950/40 border border-[#22c55e]/20 dark:border-emerald-500/25 text-[#15803d] dark:text-emerald-400 flex items-center justify-center w-fit mb-3.5">
                       <FaRocket size={16} />
                     </div>
-                    <h4 className="font-card text-[0.9375rem] font-semibold text-white mb-1.5 leading-snug">
+                    <h4 className="font-card text-[0.9375rem] font-semibold text-gray-900 dark:text-white mb-1.5 leading-snug">
                       Performance
                     </h4>
-                    <p className="font-sans text-[0.75rem] font-normal text-gray-400/85 leading-[1.6]">
+                    <p className="font-sans text-[0.75rem] font-normal text-gray-600 dark:text-gray-400/85 leading-[1.6]">
                       Optimizing for speed and efficiency in every project.
                     </p>
                   </div>
@@ -136,13 +136,13 @@ const About = () => {
                 {/* Problem Solving */}
                 <div className="glass-about-card rounded-2xl p-5 flex flex-col justify-between min-h-[145px]">
                   <div>
-                    <div className="p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-500/25 text-emerald-400 flex items-center justify-center w-fit mb-3.5">
+                    <div className="p-2.5 rounded-lg bg-[#22c55e]/15 dark:bg-emerald-950/40 border border-[#22c55e]/20 dark:border-emerald-500/25 text-[#15803d] dark:text-emerald-400 flex items-center justify-center w-fit mb-3.5">
                       <FaLightbulb size={16} />
                     </div>
-                    <h4 className="font-card text-[0.9375rem] font-semibold text-white mb-1.5 leading-snug">
+                    <h4 className="font-card text-[0.9375rem] font-semibold text-gray-900 dark:text-white mb-1.5 leading-snug">
                       Problem Solving
                     </h4>
-                    <p className="font-sans text-[0.75rem] font-normal text-gray-400/85 leading-[1.6]">
+                    <p className="font-sans text-[0.75rem] font-normal text-gray-600 dark:text-gray-400/85 leading-[1.6]">
                       Designing elegant, optimized solutions for complex challenges.
                     </p>
                   </div>
@@ -151,13 +151,13 @@ const About = () => {
                 {/* Leadership */}
                 <div className="glass-about-card rounded-2xl p-5 flex flex-col justify-between min-h-[145px]">
                   <div>
-                    <div className="p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-500/25 text-emerald-400 flex items-center justify-center w-fit mb-3.5">
+                    <div className="p-2.5 rounded-lg bg-[#22c55e]/15 dark:bg-emerald-950/40 border border-[#22c55e]/20 dark:border-emerald-500/25 text-[#15803d] dark:text-emerald-400 flex items-center justify-center w-fit mb-3.5">
                       <FaUsers size={16} />
                     </div>
-                    <h4 className="font-card text-[0.9375rem] font-semibold text-white mb-1.5 leading-snug">
+                    <h4 className="font-card text-[0.9375rem] font-semibold text-gray-900 dark:text-white mb-1.5 leading-snug">
                       Leadership
                     </h4>
-                    <p className="font-sans text-[0.75rem] font-normal text-gray-400/85 leading-[1.6]">
+                    <p className="font-sans text-[0.75rem] font-normal text-gray-600 dark:text-gray-400/85 leading-[1.6]">
                       Guiding teams and driving projects to successful completion.
                     </p>
                   </div>

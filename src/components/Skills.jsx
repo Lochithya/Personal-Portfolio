@@ -52,9 +52,9 @@ const skillIcons = {
 };
 
 const levelBadgeStyles = {
-  Expert: 'border-[#22c55e]/50 text-[#4ade80] bg-[#22c55e]/10',
-  Advanced: 'border-blue-500/50 text-blue-400 bg-blue-500/10',
-  Intermediate: 'border-teal-500/45 text-teal-400 bg-teal-500/10',
+  Expert: 'border-[#22c55e]/50 text-[#15803d] dark:text-[#4ade80] bg-[#22c55e]/15 dark:bg-[#22c55e]/10',
+  Advanced: 'border-blue-500/50 text-blue-700 dark:text-blue-400 bg-blue-500/15 dark:bg-blue-500/10',
+  Intermediate: 'border-teal-500/50 text-teal-700 dark:text-teal-400 bg-teal-500/15 dark:bg-teal-500/10',
 };
 
 const Skills = () => {
@@ -75,8 +75,8 @@ const Skills = () => {
         {/* Tools Marquee */}
         <div className="mb-16 relative overflow-hidden py-6">
           {/* Gradient overlays */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-black via-black/90 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-black via-black/90 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-[#f0fdf4] dark:from-black via-[#f0fdf4]/90 dark:via-black/90 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-[#f0fdf4] dark:from-black via-[#f0fdf4]/90 dark:via-black/90 to-transparent z-10 pointer-events-none" />
           
           {/* Subtle glow effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#4ade80]/5 to-transparent pointer-events-none" />
@@ -95,12 +95,12 @@ const Skills = () => {
               return (
                 <div
                   key={idx}
-                  className="group flex items-center gap-3 px-6 py-3.5 rounded-lg border border-gray-700/50 bg-gray-800/30 backdrop-blur-sm hover:bg-gray-800/50 hover:border-[#8DD154]/40 hover:shadow-[0_0_20px_rgba(141,209,84,0.15)] transition-all duration-300 whitespace-nowrap shrink-0"
+                  className="group flex items-center gap-4 px-6 py-3.5 rounded-2xl border border-gray-200 dark:border-gray-700/50 bg-white/80 dark:bg-gray-800/30 backdrop-blur-md hover:bg-white dark:hover:bg-gray-800/60 hover:border-[#22c55e]/50 dark:hover:border-[#22c55e]/40 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(34,197,94,0.12)] dark:hover:shadow-[0_8px_30px_rgba(34,197,94,0.15)] transition-all duration-300 whitespace-nowrap shrink-0 hover:-translate-y-1"
                 >
-                  <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-gray-700/40 group-hover:bg-[#8DD154]/10 transition-colors duration-300">
-                    <Icon className="text-gray-300 group-hover:text-[#8DD154] text-xl transition-colors duration-300" />
+                  <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gray-100/80 dark:bg-gray-700/40 group-hover:bg-[#22c55e]/15 dark:group-hover:bg-[#22c55e]/20 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-3">
+                    <Icon className="text-gray-600 dark:text-gray-300 group-hover:text-[#15803d] dark:group-hover:text-[#4ade80] text-[1.35rem] transition-colors duration-300" />
                   </div>
-                  <span className="text-sm font-semibold text-gray-200 group-hover:text-white transition-colors duration-300 tracking-wide">
+                  <span className="text-sm font-semibold text-gray-700 dark:text-gray-200 group-hover:text-[#15803d] dark:group-hover:text-[#4ade80] transition-colors duration-300 tracking-wide">
                     {tool.name}
                   </span>
                 </div>
@@ -120,9 +120,9 @@ const Skills = () => {
               className="glass-skills-card rounded-2xl p-6 md:p-8"
             >
               {/* Category header — vertical green accent + title */}
-              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-white/[0.06]">
+              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-gray-200/60 dark:border-white/[0.06]">
                 <div className="w-1 h-9 rounded-full bg-gradient-to-b from-[#4ade80] to-[#22c55e] shrink-0" />
-                <h3 className="text-lg md:text-xl font-heading font-bold text-white tracking-tight">
+                <h3 className="text-lg md:text-xl font-heading font-bold text-gray-900 dark:text-white tracking-tight">
                   {skillGroup.category}
                 </h3>
               </div>
@@ -142,17 +142,17 @@ const Skills = () => {
                       transition={{ duration: 0.3, delay: 0.08 + idx * 0.05 }}
                     >
                       <div className="flex gap-3">
-                        <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[#22c55e]/20 bg-[#22c55e]/10 text-[#4ade80]">
+                        <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[#22c55e]/40 dark:border-[#22c55e]/20 bg-[#22c55e]/15 dark:bg-[#22c55e]/10 text-[#15803d] dark:text-[#4ade80]">
                           <Icon className="text-base" />
                         </div>
 
                         <div className="min-w-0 flex-1">
                           <div className="mb-2.5 flex items-start justify-between gap-2">
                             <div>
-                              <p className="text-sm font-semibold text-white leading-tight">
+                              <p className="text-sm font-semibold text-gray-900 dark:text-white leading-tight">
                                 {skill.name}
                               </p>
-                              <p className="mt-0.5 text-xs text-gray-500">{skill.years}</p>
+                              <p className="mt-0.5 text-xs text-gray-500 dark:text-gray-500">{skill.years}</p>
                             </div>
                             <span
                               className={`shrink-0 rounded-full border px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${badgeClass}`}
@@ -161,7 +161,7 @@ const Skills = () => {
                             </span>
                           </div>
 
-                          <div className="h-1.5 overflow-hidden rounded-full bg-gray-800/80">
+                          <div className="h-1.5 overflow-hidden rounded-full bg-gray-200 dark:bg-gray-800/80">
                             <motion.div
                               initial={{ width: 0 }}
                               whileInView={{ width: `${progress}%` }}

@@ -15,21 +15,21 @@
 
 @layer utilities {
   .glass {
-    @apply bg-white/70 dark:bg-[#111111]/80 backdrop-blur-md border border-gray-200 dark:border-white/5 shadow-xl transition-colors duration-300;
+    @apply bg-white/85 dark:bg-[#111111]/80 backdrop-blur-md border border-gray-200/70 dark:border-white/5 shadow-xl transition-colors duration-300;
   }
   
   .glass-hover {
-    @apply hover:bg-white/90 dark:hover:bg-[#1a1a1a]/90 dark:hover:border-[#22c55e]/30 transition-all duration-300 hover:shadow-lg hover:shadow-[rgba(34,197,94,0.15)];
+    @apply hover:bg-white/[0.98] dark:hover:bg-[#1a1a1a]/90 hover:border-[#22c55e]/30 dark:hover:border-[#22c55e]/30 transition-all duration-300 hover:shadow-lg hover:shadow-[rgba(34,197,94,0.15)];
   }
 
   /* Softer glass for subtle transparency (used in About section) */
   .glass-soft {
-    @apply bg-white/30 dark:bg-[#111111]/50 backdrop-blur-sm border border-gray-200/25 dark:border-white/5 shadow-md transition-colors duration-300;
+    @apply bg-white/50 dark:bg-[#111111]/50 backdrop-blur-sm border border-gray-200/40 dark:border-white/5 shadow-md transition-colors duration-300;
   }
 
   /* Stronger glassmorphism for featured cards */
   .glass-strong {
-    @apply bg-white/20 dark:bg-[#0b0f0b]/50 backdrop-blur-md border border-white/10 dark:border-white/10 shadow-[0_18px_60px_rgba(2,6,23,0.6)] transition-colors duration-300;
+    @apply bg-white/40 dark:bg-[#0b0f0b]/50 backdrop-blur-md border border-gray-200/30 dark:border-white/10 shadow-[0_18px_60px_rgba(2,6,23,0.08)] dark:shadow-[0_18px_60px_rgba(2,6,23,0.6)] transition-colors duration-300;
   }
 
   .glass-strong::before {
@@ -41,16 +41,16 @@
     pointer-events: none;
   }
 
-  /* About section cards — high transparency + strong blur */
+  /* About section cards — light mode: clean white / dark mode: deep glass */
   .glass-about-card {
     @apply relative overflow-hidden border transition-colors duration-300;
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.80);
+    border-color: rgba(34, 197, 94, 0.14);
     backdrop-filter: blur(28px) saturate(170%);
     -webkit-backdrop-filter: blur(28px) saturate(170%);
     box-shadow:
-      0 8px 32px rgba(0, 0, 0, 0.18),
-      inset 0 1px 0 rgba(255, 255, 255, 0.07);
+      0 4px 24px rgba(0, 0, 0, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
   }
 
   .dark .glass-about-card {
@@ -83,13 +83,13 @@
   /* Skills cards — stronger glass than about cards */
   .glass-skills-card {
     @apply relative overflow-hidden border transition-colors duration-300;
-    background: rgba(255, 255, 255, 0.03);
-    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.75);
+    border-color: rgba(34, 197, 94, 0.15);
     backdrop-filter: blur(40px) saturate(180%);
     -webkit-backdrop-filter: blur(40px) saturate(180%);
     box-shadow:
-      0 8px 32px rgba(0, 0, 0, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      0 4px 24px rgba(0, 0, 0, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.95);
   }
 
   .dark .glass-skills-card {
@@ -162,18 +162,21 @@
   /* Contact section — form panel & info cards */
   .glass-contact-panel {
     @apply relative overflow-hidden rounded-2xl border transition-colors duration-300;
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.80);
+    border-color: rgba(34, 197, 94, 0.15);
     backdrop-filter: blur(32px) saturate(160%);
     -webkit-backdrop-filter: blur(32px) saturate(160%);
     box-shadow:
-      0 16px 48px rgba(0, 0, 0, 0.35),
-      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      0 8px 32px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
   }
 
   .dark .glass-contact-panel {
     background: rgba(10, 12, 10, 0.45);
     border-color: rgba(34, 197, 94, 0.12);
+    box-shadow:
+      0 16px 48px rgba(0, 0, 0, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
   }
 
   .glass-contact-panel::before {
@@ -184,7 +187,7 @@
     width: 55%;
     height: 55%;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(34, 197, 94, 0.14) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(34, 197, 94, 0.08) 0%, transparent 70%);
     pointer-events: none;
   }
 
@@ -195,33 +198,70 @@
 
   .glass-contact-card {
     @apply rounded-xl border transition-colors duration-300;
-    background: rgba(255, 255, 255, 0.03);
-    border-color: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.75);
+    border-color: rgba(34, 197, 94, 0.12);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
   }
 
   .dark .glass-contact-card {
     background: rgba(12, 14, 12, 0.55);
     border-color: rgba(255, 255, 255, 0.06);
+    box-shadow: none;
   }
 
   .glass-contact-card:hover {
-    border-color: rgba(34, 197, 94, 0.25);
+    border-color: rgba(34, 197, 94, 0.35);
   }
 
+  /* Contact form fields - light: white bg / dark: dark bg */
   .contact-field {
-    @apply w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3.5 text-sm text-white placeholder:text-gray-500 transition-all duration-300;
+    @apply w-full rounded-xl border px-4 py-3.5 text-sm placeholder:text-gray-400 transition-all duration-300;
+    background: rgba(255, 255, 255, 0.90);
+    border-color: rgba(0, 0, 0, 0.10);
+    color: #1f2937;
     backdrop-filter: blur(8px);
   }
 
+  .dark .contact-field {
+    background: rgba(0, 0, 0, 0.30);
+    border-color: rgba(255, 255, 255, 0.10);
+    color: #ffffff;
+  }
+
+  .dark .contact-field::placeholder {
+    color: rgba(107, 114, 128, 1);
+  }
+
   .contact-field:focus {
-    @apply border-[#22c55e]/50 outline-none ring-2 ring-[#22c55e]/15;
+    @apply outline-none;
+    border-color: rgba(34, 197, 94, 0.50);
+    box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.15);
+  }
+
+  /* Theme toggle button */
+  .theme-toggle-btn {
+    @apply relative flex items-center justify-center w-9 h-9 rounded-full border transition-all duration-300 cursor-pointer;
+    border-color: rgba(34, 197, 94, 0.30);
+    background: rgba(34, 197, 94, 0.08);
+  }
+
+  .theme-toggle-btn:hover {
+    border-color: rgba(34, 197, 94, 0.60);
+    background: rgba(34, 197, 94, 0.18);
+    box-shadow: 0 0 16px rgba(34, 197, 94, 0.25);
   }
 
   /* Hero profile — dual bold green beams from opposite ends */
   .hero-profile-border-wrap {
     @apply relative rounded-3xl p-[4px] overflow-hidden;
+    box-shadow:
+      0 24px 60px rgba(0, 0, 0, 0.18),
+      0 0 48px rgba(34, 197, 94, 0.12);
+  }
+
+  .dark .hero-profile-border-wrap {
     box-shadow:
       0 24px 60px rgba(0, 0, 0, 0.55),
       0 0 48px rgba(34, 197, 94, 0.12);

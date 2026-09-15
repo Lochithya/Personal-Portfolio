@@ -10,7 +10,7 @@ export const personalInfo = {
   linkedin: "https://www.linkedin.com/in/lochithya-hettiarachchi",
   medium: "https://medium.com/@lochithya12",
   stats: [
-    { label: "CGPA", value: "3.98/4.00" },
+    { label: "CGPA", value: "3.96/4.00" },
     { label: "Projects", value: "4+" },
     { label: "Experience", value: "11 Months" }
   ]

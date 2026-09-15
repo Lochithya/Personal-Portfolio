@@ -108,9 +108,24 @@ const Contact = () => {
     `contact-field ${errors[name] ? 'border-red-500/60 ring-red-500/20' : ''}`;
 
   const socialLinks = [
-    { href: personalInfo.github, icon: FaGithub, label: 'GitHub' },
-    { href: personalInfo.linkedin, icon: FaLinkedin, label: 'LinkedIn' },
-    { href: personalInfo.medium, icon: FaMedium, label: 'Medium' },
+    {
+      href: personalInfo.github,
+      icon: FaGithub,
+      label: 'GitHub',
+      hoverClass: 'hover:bg-gray-900 hover:text-white hover:border-gray-900 dark:hover:bg-white dark:hover:text-gray-900 dark:hover:border-white',
+    },
+    {
+      href: personalInfo.linkedin,
+      icon: FaLinkedin,
+      label: 'LinkedIn',
+      hoverClass: 'hover:bg-[#0a66c2] hover:text-white hover:border-[#0a66c2] dark:hover:bg-[#0a66c2] dark:hover:text-white dark:hover:border-[#0a66c2]',
+    },
+    {
+      href: personalInfo.medium,
+      icon: FaMedium,
+      label: 'Medium',
+      hoverClass: 'hover:bg-gray-900 hover:text-white hover:border-gray-900 dark:hover:bg-white dark:hover:text-gray-900 dark:hover:border-white',
+    },
   ];
 
   return (
@@ -133,7 +148,7 @@ const Contact = () => {
           >
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
               <div className="space-y-2">
-                <label htmlFor="user_name" className="text-xs font-medium text-gray-400">
+                <label htmlFor="user_name" className="text-xs font-medium text-gray-600 dark:text-gray-400">
                   Name
                 </label>
                 <input
@@ -150,7 +165,7 @@ const Contact = () => {
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="user_email" className="text-xs font-medium text-gray-400">
+                <label htmlFor="user_email" className="text-xs font-medium text-gray-600 dark:text-gray-400">
                   Email
                 </label>
                 <input
@@ -167,7 +182,7 @@ const Contact = () => {
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="message" className="text-xs font-medium text-gray-400">
+                <label htmlFor="message" className="text-xs font-medium text-gray-600 dark:text-gray-400">
                   Message
                 </label>
                 <textarea
@@ -199,15 +214,15 @@ const Contact = () => {
               </button>
 
               {submitStatus === 'success' && (
-                <div className="rounded-xl border border-[#22c55e]/30 bg-black/40 px-4 py-3 backdrop-blur-sm">
-                  <p className="text-center text-sm text-[#4ade80]">
+                <div className="rounded-xl border border-[#22c55e]/30 bg-green-50/80 dark:bg-black/40 px-4 py-3 backdrop-blur-sm">
+                  <p className="text-center text-sm text-[#22c55e] dark:text-[#4ade80]">
                     Message sent successfully! I&apos;ll get back to you soon.
                   </p>
                 </div>
               )}
               {submitStatus === 'error' && (
-                <div className="rounded-xl border border-red-500/30 bg-black/40 px-4 py-3 backdrop-blur-sm">
-                  <p className="text-center text-sm text-red-400">
+                <div className="rounded-xl border border-red-500/30 bg-red-50/80 dark:bg-black/40 px-4 py-3 backdrop-blur-sm">
+                  <p className="text-center text-sm text-red-600 dark:text-red-400">
                     Failed to send message. Please configure EmailJS or email me directly.
                   </p>
                 </div>
@@ -223,10 +238,10 @@ const Contact = () => {
             transition={{ duration: 0.55, delay: 0.1 }}
             className="flex flex-col justify-center lg:pt-4"
           >
-            <h3 className="mb-4 font-heading text-3xl font-bold text-white md:text-4xl">
+            <h3 className="mb-4 font-heading text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">
               Let&apos;s Connect
             </h3>
-            <p className="mb-8 max-w-md text-sm leading-relaxed text-gray-400 md:text-base">
+            <p className="mb-8 max-w-md text-sm leading-relaxed text-gray-600 dark:text-gray-400 md:text-base">
               I&apos;m always open to discussing new projects, creative ideas, or opportunities to be
               part of your vision. Feel free to reach out!
             </p>
@@ -240,8 +255,8 @@ const Contact = () => {
                   <FaEnvelope className="text-lg text-[#4ade80]" />
                 </div>
                 <div className="min-w-0">
-                  <p className="mb-0.5 text-xs text-gray-500">Email</p>
-                  <p className="truncate text-sm font-medium text-white group-hover:text-[#4ade80] transition-colors">
+                  <p className="mb-0.5 text-xs text-gray-400 dark:text-gray-500">Email</p>
+                  <p className="truncate text-sm font-medium text-gray-700 dark:text-white group-hover:text-[#4ade80] transition-colors">
                     {personalInfo.email}
                   </p>
                 </div>
@@ -252,23 +267,23 @@ const Contact = () => {
                   <FaMapMarkerAlt className="text-lg text-[#4ade80]" />
                 </div>
                 <div className="min-w-0">
-                  <p className="mb-0.5 text-xs text-gray-500">Location</p>
-                  <p className="text-sm font-medium leading-snug text-white">{personalInfo.location}</p>
+                  <p className="mb-0.5 text-xs text-gray-400 dark:text-gray-500">Location</p>
+                  <p className="text-sm font-medium leading-snug text-gray-700 dark:text-white">{personalInfo.location}</p>
                 </div>
               </div>
             </div>
 
             <div>
-              <p className="mb-4 text-xs font-medium text-gray-500">Connect with me</p>
+              <p className="mb-4 text-xs font-medium text-gray-500 dark:text-gray-500">Connect with me</p>
               <div className="flex gap-3">
-                {socialLinks.map(({ href, icon: Icon, label }) => (
+                {socialLinks.map(({ href, icon: Icon, label, hoverClass }) => (
                   <a
                     key={label}
                     href={href}
                     target="_blank"
                     rel="noreferrer"
                     aria-label={label}
-                    className="glass-contact-card flex h-11 w-11 items-center justify-center text-gray-300 transition-all hover:border-[#22c55e]/40 hover:text-[#4ade80]"
+                    className={`glass-contact-card flex h-11 w-11 items-center justify-center text-gray-600 dark:text-gray-300 transition-all duration-300 ${hoverClass}`}
                   >
                     <Icon className="text-lg" />
                   </a>

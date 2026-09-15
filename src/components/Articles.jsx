@@ -12,7 +12,7 @@ const ArticleCard = ({ article }) => {
   const imageSrc = article.image;
 
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0c0c0c]/90 shadow-[0_12px_40px_rgba(0,0,0,0.45)] backdrop-blur-sm">
+    <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200/70 dark:border-white/[0.08] bg-white/80 dark:bg-[#0c0c0c]/90 shadow-[0_4px_24px_rgba(0,0,0,0.08)] dark:shadow-[0_12px_40px_rgba(0,0,0,0.45)] backdrop-blur-sm">
       <div className="relative h-52 overflow-hidden bg-[#111] sm:h-56 flex items-center justify-center">
         {!imgError && imageSrc ? (
           <img
@@ -22,19 +22,19 @@ const ArticleCard = ({ article }) => {
             onError={() => setImgError(true)}
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#1a1a2e] via-[#0f0f14] to-[#0a0a0a]">
-            <FaMedium size={64} className="text-gray-700" />
+          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-gray-100 dark:from-[#1a1a2e] via-gray-50 dark:via-[#0f0f14] to-white dark:to-[#0a0a0a]">
+            <FaMedium size={64} className="text-gray-400 dark:text-gray-700" />
           </div>
         )}
 
-        <span className="absolute left-3 top-3 rounded-full border border-white/15 bg-black/70 px-4 py-1.5 text-xs font-medium text-gray-200 backdrop-blur-sm">
+        <span className="absolute left-3 top-3 rounded-full border border-gray-200/60 dark:border-white/15 bg-white/80 dark:bg-black/70 px-4 py-1.5 text-xs font-medium text-gray-600 dark:text-gray-200 backdrop-blur-sm">
           Article
         </span>
       </div>
 
       <div className="flex flex-1 flex-col p-5 md:p-6">
-        <h3 className="mb-2 font-heading text-lg font-bold text-white md:text-xl line-clamp-2">{article.title}</h3>
-        <p className="mb-4 line-clamp-3 flex-1 text-sm leading-relaxed text-gray-400">
+        <h3 className="mb-2 font-heading text-lg font-bold text-gray-900 dark:text-white md:text-xl line-clamp-2">{article.title}</h3>
+        <p className="mb-4 line-clamp-3 flex-1 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
           {article.description}
         </p>
 
@@ -42,7 +42,7 @@ const ArticleCard = ({ article }) => {
           href={article.url}
           target="_blank"
           rel="noreferrer"
-          className="mx-auto inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-[#4ade80] border border-white/10 bg-white/5 backdrop-blur-md transition-all hover:border-[#22c55e]/50 hover:bg-[#22c55e]/20 hover:text-[#22c55e] hover:shadow-[0_0_18px_rgba(34,197,94,0.25)]"
+          className="mx-auto inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-[#22c55e] dark:text-[#4ade80] border border-gray-200/60 dark:border-white/10 bg-gray-50/80 dark:bg-white/5 backdrop-blur-md transition-all hover:border-[#22c55e]/50 hover:bg-[#22c55e]/20 hover:text-[#22c55e] hover:shadow-[0_0_18px_rgba(34,197,94,0.25)]"
         >
           Read on Medium
           <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -92,7 +92,7 @@ const Articles = () => {
               type="button"
               onClick={goPrev}
               disabled={currentIndex === 0}
-              className="flex-shrink-0 flex h-11 w-11 md:h-12 md:w-12 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white backdrop-blur-md transition-all hover:border-[#22c55e] hover:bg-[#22c55e]/20 disabled:pointer-events-none disabled:opacity-30"
+              className="flex-shrink-0 flex h-11 w-11 md:h-12 md:w-12 items-center justify-center rounded-full border border-gray-200/70 dark:border-white/10 bg-white/80 dark:bg-black/60 text-gray-600 dark:text-white backdrop-blur-md transition-all hover:border-[#22c55e] hover:bg-[#22c55e]/20 hover:text-[#22c55e] dark:hover:text-white disabled:pointer-events-none disabled:opacity-30"
               aria-label="Previous articles"
             >
               <FaChevronLeft />
@@ -124,7 +124,7 @@ const Articles = () => {
               type="button"
               onClick={goNext}
               disabled={currentIndex >= maxIndex}
-              className="flex-shrink-0 flex h-11 w-11 md:h-12 md:w-12 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white backdrop-blur-md transition-all hover:border-[#22c55e] hover:bg-[#22c55e]/20 disabled:pointer-events-none disabled:opacity-30"
+              className="flex-shrink-0 flex h-11 w-11 md:h-12 md:w-12 items-center justify-center rounded-full border border-gray-200/70 dark:border-white/10 bg-white/80 dark:bg-black/60 text-gray-600 dark:text-white backdrop-blur-md transition-all hover:border-[#22c55e] hover:bg-[#22c55e]/20 hover:text-[#22c55e] dark:hover:text-white disabled:pointer-events-none disabled:opacity-30"
               aria-label="Next articles"
             >
               <FaChevronRight />
@@ -160,19 +160,19 @@ const Articles = () => {
                   type="button"
                   onClick={goPrev}
                   disabled={currentIndex === 0}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white backdrop-blur-md transition-all hover:border-[#22c55e] hover:bg-[#22c55e]/20 disabled:pointer-events-none disabled:opacity-30"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200/70 dark:border-white/10 bg-white/80 dark:bg-black/60 text-gray-600 dark:text-white backdrop-blur-md transition-all hover:border-[#22c55e] hover:bg-[#22c55e]/20 hover:text-[#22c55e] dark:hover:text-white disabled:pointer-events-none disabled:opacity-30"
                   aria-label="Previous articles"
                 >
                   <FaChevronLeft />
                 </button>
-                <span className="text-sm text-gray-400">
+                <span className="text-sm text-gray-500 dark:text-gray-400">
                   {currentIndex + 1} / {maxIndex + 1}
                 </span>
                 <button
                   type="button"
                   onClick={goNext}
                   disabled={currentIndex >= maxIndex}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white backdrop-blur-md transition-all hover:border-[#22c55e] hover:bg-[#22c55e]/20 disabled:pointer-events-none disabled:opacity-30"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200/70 dark:border-white/10 bg-white/80 dark:bg-black/60 text-gray-600 dark:text-white backdrop-blur-md transition-all hover:border-[#22c55e] hover:bg-[#22c55e]/20 hover:text-[#22c55e] dark:hover:text-white disabled:pointer-events-none disabled:opacity-30"
                   aria-label="Next articles"
                 >
                   <FaChevronRight />
@@ -191,7 +191,7 @@ const Articles = () => {
                   onClick={() => setCurrentIndex(i)}
                   aria-label={`Go to slide ${i + 1}`}
                   className={`h-2 rounded-full transition-all duration-300 ${
-                    i === currentIndex ? 'w-8 bg-[#4ade80]' : 'w-2 bg-gray-600 hover:bg-gray-500'
+                    i === currentIndex ? 'w-8 bg-[#4ade80]' : 'w-2 bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
                   }`}
                 />
               ))}

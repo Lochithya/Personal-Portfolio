@@ -5,7 +5,7 @@ export const education = [
     institution: "University of Kelaniya, Faculty Of Science",
     period: "Apr 2024 - Current",
     details: [
-      "CGPA - 3.98/4.00",
+      "CGPA - 3.96/4.00",
       "Specializing in Net-Centric Web Application Development, Data Science and Engineering Application, Business Engineering Domain"
     ],
     tags: ["Web Development", "Data Science", "System Design"]

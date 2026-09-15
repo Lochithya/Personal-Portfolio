@@ -37,9 +37,17 @@ const Star = ({ delay, duration, size }) => {
 
 function App() {
   return (
-    <div className="bg-light-bg dark:bg-[#040504] min-h-screen text-gray-800 dark:text-gray-200 font-sans selection:bg-[#22c55e]/30 selection:text-gray-900 dark:selection:text-white transition-colors duration-300 relative overflow-hidden">
+    <div className="bg-[#f0fdf4] dark:bg-[#040504] min-h-screen text-gray-800 dark:text-gray-200 font-sans selection:bg-[#22c55e]/30 selection:text-gray-900 dark:selection:text-white transition-colors duration-300 relative overflow-hidden">
       
-      {/* Global soft green patches */}
+      {/* Light mode ambient blobs */}
+      <div className="fixed inset-0 pointer-events-none block dark:hidden z-0">
+        <div className="absolute top-[-5%] right-[-5%] w-[500px] h-[500px] bg-[#22c55e]/8 rounded-full blur-[130px]" />
+        <div className="absolute top-[40%] left-[-10%] w-[600px] h-[600px] bg-[#10b981]/6 rounded-full blur-[160px]" />
+        <div className="absolute bottom-[-10%] right-[20%] w-[400px] h-[400px] bg-[#4ade80]/5 rounded-full blur-[110px]" />
+        <div className="absolute top-[20%] left-[30%] w-[300px] h-[300px] bg-[#86efac]/6 rounded-full blur-[100px]" />
+      </div>
+
+      {/* Global soft green patches (dark mode only) */}
       <div className="fixed inset-0 pointer-events-none hidden dark:block z-0">
         <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-[#22c55e]/9 rounded-full blur-[130px]" />
         <div className="absolute top-[40%] left-[-10%] w-[600px] h-[600px] bg-[#10b981]/7 rounded-full blur-[160px]" />
