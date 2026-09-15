@@ -11,10 +11,10 @@ import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-const Star = ({ delay, duration, size }) => {
+const Star = ({ delay, duration, size, colorClass = "bg-white/20" }) => {
   return (
     <motion.div
-      className="absolute rounded-full bg-white/20"
+      className={`absolute rounded-full ${colorClass}`}
       style={{
         width: size,
         height: size,
@@ -23,7 +23,7 @@ const Star = ({ delay, duration, size }) => {
       }}
       animate={{
         y: [0, -1000],
-        opacity: [0, 1, 0],
+        opacity: [0, 0.95, 0],
       }}
       transition={{
         duration: duration,
@@ -39,12 +39,23 @@ function App() {
   return (
     <div className="bg-[#f0fdf4] dark:bg-[#040504] min-h-screen text-gray-800 dark:text-gray-200 font-sans selection:bg-[#22c55e]/30 selection:text-gray-900 dark:selection:text-white transition-colors duration-300 relative overflow-hidden">
       
-      {/* Light mode ambient blobs */}
+      {/* Light mode ambient blobs & rising emerald particles */}
       <div className="fixed inset-0 pointer-events-none block dark:hidden z-0">
         <div className="absolute top-[-5%] right-[-5%] w-[500px] h-[500px] bg-[#22c55e]/8 rounded-full blur-[130px]" />
         <div className="absolute top-[40%] left-[-10%] w-[600px] h-[600px] bg-[#10b981]/6 rounded-full blur-[160px]" />
         <div className="absolute bottom-[-10%] right-[20%] w-[400px] h-[400px] bg-[#4ade80]/5 rounded-full blur-[110px]" />
         <div className="absolute top-[20%] left-[30%] w-[300px] h-[300px] bg-[#86efac]/6 rounded-full blur-[100px]" />
+
+        {/* Animated rising emerald particles in light mode */}
+        {Array.from({ length: 60 }).map((_, i) => (
+          <Star
+            key={`light-star-${i}`}
+            delay={Math.random() * 5}
+            duration={10 + Math.random() * 10}
+            size={3 + Math.random() * 3}
+            colorClass="bg-[#4ade80] shadow-[0_0_10px_#4ade80,0_0_20px_#22c55e,0_0_30px_rgba(74,222,128,0.6)]"
+          />
+        ))}
       </div>
 
       {/* Global soft green patches (dark mode only) */}
