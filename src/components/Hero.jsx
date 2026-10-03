@@ -92,8 +92,8 @@ const Hero = () => {
               Get in Touch
             </Link>
             <a
-              href="/resume/Lochithya_Hettiarachchi_Resume.pdf"
-              download="Lochithya_Hettiarachchi_Resume.pdf"
+              href="/resume/Lochithya_Hettiarachchi_CV.pdf"
+              download="Lochithya_Hettiarachchi_CV.pdf"
               className="inline-flex items-center justify-center gap-2 px-7 sm:px-9 py-3 sm:py-3.5 rounded-full bg-gray-50/80 dark:bg-white/10 backdrop-blur-xl border border-gray-200/80 dark:border-white/40 text-gray-600 dark:text-white font-semibold text-sm tracking-wide hover:bg-white dark:hover:bg-white/20 hover:border-[#22c55e]/40 dark:hover:border-white/50 hover:text-[#22c55e] dark:hover:text-white hover:shadow-[0_8px_25px_rgba(34,197,94,0.12)] dark:hover:shadow-[0_8px_32px_0_rgba(255,255,255,0.28)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
